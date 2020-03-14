@@ -11,6 +11,10 @@ import { MenuAdminComponent } from './components/menu-admin/menu-admin.component
 import { MenuNoderadorComponent } from './components/menu-noderador/menu-noderador.component';
 import { MenuUsuarioComponent } from './components/menu-usuario/menu-usuario.component';
 
+import {FormsModule } from '@angular/forms'
+import {HttpClientModule } from '@angular/common/http'
+
+import {ReactiveFormsModule } from '@angular/forms'
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,9 +28,15 @@ import { MenuUsuarioComponent } from './components/menu-usuario/menu-usuario.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+  
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
