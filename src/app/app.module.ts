@@ -14,7 +14,25 @@ import { MenuUsuarioComponent } from './components/menu-usuario/menu-usuario.com
 import {FormsModule } from '@angular/forms'
 import {HttpClientModule } from '@angular/common/http'
 
-import {ReactiveFormsModule } from '@angular/forms'
+import {ReactiveFormsModule } from '@angular/forms';
+import { RegistroCandidatosComponent } from './components/registro-candidatos/registro-candidatos.component'
+//MODEUL DE ANGULAR MTERIAL
+import { MatSliderModule } from '@angular/material/slider';
+import {MatInputModule} from '@angular/material/input'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatIconModule } from '@angular/material/icon';
+
+
+import { MatButtonModule } from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatStepper,MatStepLabel,MatStepperModule,MatHorizontalStepper} from '@angular/material/stepper';
+import { MatSelectModule } from '@angular/material/select';
+
+
+//import { FlexLayoutModule } from '@angular/flex-layout';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,14 +42,28 @@ import {ReactiveFormsModule } from '@angular/forms'
     PerfilComponent,
     MenuAdminComponent,
     MenuNoderadorComponent,
-    MenuUsuarioComponent
+    MenuUsuarioComponent,
+    RegistroCandidatosComponent
+  
+  ],exports: [
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   imports: [
     BrowserModule,
+    MatFormFieldModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSliderModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatStepperModule
   ],
   providers: [
   

@@ -1,0 +1,128 @@
+
+
+.form-contorl{
+    width: 10%;
+}
+.form{
+    width: 100%;
+    
+}
+button{
+    display: inline;
+    margin-left: 20px;
+}
+
+h1{
+    position: relative;
+    left: 25px;
+    top: 0;
+    color:#fff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    
+    
+}
+.container-fluid{
+
+    background-color:#ff5454 ;
+  /*  #ffa2a2 background-color: #ffb6b6; REDUCCIONDLE BASE #ff5454 */
+  
+    
+  
+}
+html{
+
+
+}
+
+#Continuar{
+    position: absolute;
+    left: 0px;
+    color:#fff;
+    background-color: #ff0505;
+    /*background-color:#ff4040;*/
+
+    
+}
+mat-vertical-content {
+    background-color: aqua;
+}
+
+.izq{
+    
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.d  {
+    width: 100%;
+    display: inline-block;
+    
+    
+}
+.d div {
+    display: inline;
+}
+.d  div:first-child  {
+    
+    position: relative;
+    left: 0px;
+}
+
+
+      
+#p{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 728px){
+    body{
+        background-color: green;
+    }
+    h1{
+        color:#fff;
+    }
+    
+    .d{
+        display: block;
+        width: 100%;
+        position: relative;
+        top:20px;
+        left: -10px;
+    }
+
+    .d button {
+        margin: 7px;
+        width: 100%;
+    }
+    .d button:hover{
+        background-clip: #171823;
+    }
+       
+#p{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.form{
+    width: 100%;
+}
+#boxes{
+   
+    text-align: center;
+    
+}
+
+.box{
+    
+}
+
+}
