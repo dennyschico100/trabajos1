@@ -15,6 +15,9 @@ export class LoginComponent implements OnInit {
   iniciar:FormGroup
   cargando:any;
   overlay:any
+  ventana1:any
+  ventana2:any
+
   mensaje:string;
   isLoggedIn = false;
   isLoginFailed = false;
@@ -49,20 +52,52 @@ export class LoginComponent implements OnInit {
 
 
   }
+
+  cerrar(){
+
+    this.ventana1=document.getElementById('popup1')
+    this.ventana1.style.display="none"
+
+  }
+
+  mostrar(){
+    
+    this.ventana1=document.getElementById('popup1')
+    this.ventana1.className = 'overlay2'
+    
+    this.ventana2=document.getElementById('popup2')
+    this.ventana2.className = 'popup'
+
+              
+  }
   onSubmit() {
 
     setTimeout(()=>{ 
-      this.cargando.style.display = "none"; },2000);
+      this.cargando.style.display = "none"; },1500);
+    
+      setTimeout(()=>{ 
+        this.ventana2=document.getElementById('popup2')
+    this.ventana2.className = 'popup'
+       },1600);
+      
       this.cargando = document.getElementById('carga')
       this.overlay=document.getElementById('ocultar')
       this.cargando.className = 'loader'
-      this.overlay.className = 'overlay'
+       
+    this.ventana1=document.getElementById('popup1')
+    this.ventana1.className = 'overlay2'
+    
+    
+
+
       this.authService.login(this.iniciar.value).subscribe(
   
         data => {
         this.mensaje=data.message;
             if(this.mensaje="Unauthorized"){
-  
+              
+              
+      
           this.isLoginFailed = true;
           
           //this.errorMessage = err.error.message;
