@@ -21,10 +21,10 @@ export class AuthService   {
 
   }
 
-  login(credentials): Observable<any> {
+  login(credentials): Observable<any> { 
     return this.http.post(AUTH_API + 'signin', {
-      username: credentials.username,
-      password: credentials.password
+      email: credentials.email,
+      password: credentials.contraseña
     }, httpOption);
   }
 
