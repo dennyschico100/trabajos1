@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
 
     this.ventana1=document.getElementById('popup1')
     this.ventana1.style.display="none"
-
+    this.reloadPage()
   }
 
   mostrar(){
@@ -78,6 +78,7 @@ export class LoginComponent implements OnInit {
       setTimeout(()=>{ 
         this.ventana2=document.getElementById('popup2')
     this.ventana2.className = 'popup'
+    this.ventana2.style.opacity="1"
        },1600);
       
       this.cargando = document.getElementById('carga')
