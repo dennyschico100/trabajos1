@@ -13,7 +13,9 @@ export class LoginComponent implements OnInit {
 
   form: any = {};
   iniciar:FormGroup
-
+  cargando:any;
+  overlay:any
+  mensaje:string;
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
@@ -48,20 +50,47 @@ export class LoginComponent implements OnInit {
 
   }
   onSubmit() {
-    this.authService.login(this.iniciar).subscribe(
-      data => {
-        this.tokenStorage.saveToke(data.accessToken);
-        this.tokenStorage.saveUser(data);
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
-        this.roles = this.tokenStorage.getUser().roles;
-        this.reloadPage();
-      },
-      err => {
-        this.errorMessage = err.error.message;
-        this.isLoginFailed = true;
-      }
-    ); }
+
+    setTimeout(()=>{ 
+      this.cargando.style.display = "none"; },2000);
+      this.cargando = document.getElementById('carga')
+      this.overlay=document.getElementById('ocultar')
+      this.cargando.className = 'loader'
+      this.overlay.className = 'overlay'
+      this.authService.login(this.iniciar.value).subscribe(
+  
+        data => {
+        this.mensaje=data.message;
+            if(this.mensaje="Unauthorized"){
+  
+          this.isLoginFailed = true;
+          
+          //this.errorMessage = err.error.message;
+          this.errorMessage = 'Usuario  y/o contraseña incorrecta';
+          
+            }else{
+          this.tokenStorage.saveToke(data.accessToken);
+          this.tokenStorage.saveUser(data);
+          this.isLoginFailed = false;
+          this.isLoggedIn = true;
+          this.roles = this.tokenStorage.getUser().roles;
+          console.log(data);
+            }
+              this.iniciar.reset()
+              this.reloadPage()
+  
+  
+        },
+        err => {
+          this.isLoginFailed = true;
+          
+          this.errorMessage = err.error.message;
+          
+        }
+      );  
+      
+
+   }
 
     reloadPage() {
       window.location.reload();
