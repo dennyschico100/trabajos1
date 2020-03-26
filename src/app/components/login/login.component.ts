@@ -120,6 +120,9 @@ export class LoginComponent implements OnInit {
           this.roles = this.tokenStorage.getUser().roles;
           
           this.router.navigate(['/profile'])
+  .then(() => {
+    window.location.reload();
+  });
           
         }
         this.iniciar.reset()
