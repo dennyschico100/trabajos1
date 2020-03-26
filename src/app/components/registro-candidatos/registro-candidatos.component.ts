@@ -215,6 +215,7 @@ export class RegistroCandidatosComponent implements OnInit {
         
         
         //this.router.navigate(['/login'])
+        
 
        
         
