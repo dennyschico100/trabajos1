@@ -27,6 +27,9 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatStepper,MatStepLabel,MatStepperModule,MatHorizontalStepper} from '@angular/material/stepper';
 import { MatSelectModule } from '@angular/material/select';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { NavegacionComponent} from './components/navegacion/navegacion.component';
 
 
 //import { FlexLayoutModule } from '@angular/flex-layout';
@@ -43,7 +46,9 @@ import { MatSelectModule } from '@angular/material/select';
     MenuAdminComponent,
     MenuNoderadorComponent,
     MenuUsuarioComponent,
-    RegistroCandidatosComponent
+    RegistroCandidatosComponent,
+    NavegacionComponent
+
   
   ],exports: [
     MatButtonModule,
@@ -63,7 +68,11 @@ import { MatSelectModule } from '@angular/material/select';
     MatButtonModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatStepperModule
+    MatStepperModule,
+    CKEditorModule,
+    FroalaEditorModule.forRoot(),
+     FroalaViewModule.forRoot()
+    
   ],
   providers: [
   

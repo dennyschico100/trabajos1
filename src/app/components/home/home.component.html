@@ -1,5 +1,18 @@
-<div class="container">
+<div style="height: 100vh;" class="container">
     <header class="jumbotron">
-      <p>{{ content }}</p>
-    </header>
+
+<!--<ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
+      <p>{{ content }}</p>-->
+<form class="form" method="post" [formGroup]="publicarForm" >
+
+  <!--
+    (change)="onChange($event)" 
+  -->
+    <ckeditor formControlName='editor'  [editor]="Editor" ></ckeditor>
+  <span class="text-danger " *ngIf="publicarForm.get('editor').touched " > 
+    Debes de completar la descripcion de la oferta!!
+  </span>
+</form>
+    </header>  
   </div>
+  

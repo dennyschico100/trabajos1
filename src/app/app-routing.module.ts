@@ -9,10 +9,13 @@ import {MenuAdminComponent} from './components/menu-admin/menu-admin.component';
 import { MenuNoderadorComponent} from './components/menu-noderador/menu-noderador.component';
 import { MenuUsuarioComponent } from './components/menu-usuario/menu-usuario.component';
 import {RegistroCandidatosComponent} from './components/registro-candidatos/registro-candidatos.component';
+import { NavegacionComponent} from './components/navegacion/navegacion.component';
 
 
 const routes: Routes = [
-  { path: 'home/hogar', component: HomeComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'nav', component: NavegacionComponent},
+  
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegistroComponent },
   {path:'registro-candidato',component:RegistroCandidatosComponent },
