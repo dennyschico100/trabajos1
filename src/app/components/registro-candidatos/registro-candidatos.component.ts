@@ -3,7 +3,7 @@ import { NgForm, FormGroup, Validators, FormBuilder, FormControl } from '@angula
 import { Router } from '@angular/router';
 import { Usuarios } from 'src/app/modelos/usuarios.model';
 import { AuthService } from '../../Servicios/auth.service'
-import {HostListener,Directive,HostBinding,Input} from '@angular/core';
+import { HostListener, Directive, HostBinding, Input } from '@angular/core';
 import { MatVerticalStepper } from '@angular/material/stepper';
 
 
@@ -26,6 +26,8 @@ export class RegistroCandidatosComponent implements OnInit {
 
   cargando = false
   enviado = false
+  habilitar = false
+
   usuarios: Usuarios = {
     id_usuario: 0,
     nombres: '',
@@ -51,6 +53,8 @@ export class RegistroCandidatosComponent implements OnInit {
   isSuccessful = false;
   isSignUpFailed = false;
   errorMessage = '';
+  sent = false
+  spinner: HTMLElement;
 
 
 
@@ -61,46 +65,46 @@ export class RegistroCandidatosComponent implements OnInit {
     private authService: AuthService
 
   ) { }
-  
-  isVertical=false;
+
+  isVertical = false;
   public innerWidth: any;
-  proceder=false
+  proceder = false
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.innerWidth = window.innerWidth;
   }
 
- 
-  hand(){
+
+  hand() {
 
     //alert("entramos")
-    if(this.registrarForm1.invalid){
+    if (this.registrarForm1.invalid) {
       //alert("EST EN EL IF")
-    
-      this.proceder=true;
-      //let p1=document.getElementsByTagName("mat-step")[0];
-    
-   //p1.setAttribute("completed","true");
-    
 
-    }else{
-    
-    
+      this.proceder = true;
+      //let p1=document.getElementsByTagName("mat-step")[0];
+
+      //p1.setAttribute("completed","true");
+
+
+    } else {
+
+
     }
-    
+
 
   }
-  validar(){
+  validar() {
 
-    
+
   }
 
 
   ngOnInit() {
-   
+
     this.innerWidth = window.innerWidth;
-    if(this.innerWidth < 728){
-      this.isVertical=true;
+    if (this.innerWidth < 728) {
+      this.isVertical = true;
     }
 
     /* this.registrarForm=new FormGroup({
@@ -119,7 +123,7 @@ export class RegistroCandidatosComponent implements OnInit {
       nombres: new FormControl('', Validators.required),
       apellidos: new FormControl('', Validators.required),
       nacionalidad: new FormControl('', Validators.required),
-      genero: new FormControl('',Validators.required),
+      genero: new FormControl('', Validators.required),
       edad: new FormControl('', Validators.required),
       fecha_nacimiento: new FormControl('2020-01-01'),
       telefono: new FormControl('', Validators.required),
@@ -128,18 +132,18 @@ export class RegistroCandidatosComponent implements OnInit {
     }
     );
 
-    
+
     this.validar()
     //,
-    this.registrarForm2 = this.formBuilder2.group( {
-        email: ['', [Validators.required, Validators.email]],
-        contraseña: ['', [Validators.required, Validators.minLength(6)]],
-        contraseña2: ['', [Validators.required, Validators.minLength(6)]],
-  
-      },{
-        validator: this.MustMatch('contraseña', 'contraseña2')
+    this.registrarForm2 = this.formBuilder2.group({
+      email: ['', [Validators.required, Validators.email]],
+      contraseña: ['', [Validators.required, Validators.minLength(6)]],
+      contraseña2: ['', [Validators.required, Validators.minLength(6)]],
+
+    }, {
+      validator: this.MustMatch('contraseña', 'contraseña2')
     }
-    
+
     )
 
   }
@@ -179,57 +183,82 @@ export class RegistroCandidatosComponent implements OnInit {
   }
   //
   onSubmit() {
+    this.sent = true
+    let atras = document.getElementById('atras')
+    atras.setAttribute('disabled', 'true')
+
+    this.habilitar = false
 
     this.loading = true;
 
     function myFunction() {
 
-
     }
 
+    if (!this.registrarForm2.errors) {
+      this.spinner = document.getElementById('spin')
 
+      setTimeout(() => {
+        this.spinner.style.opacity = "0"
+        this.spinner.remove
+        atras.setAttribute('disabled', 'false')
+
+      }, 1480);
+
+    } else {
+
+      this.spinner = document.getElementById('spin')
+
+      setTimeout(() => {
+        this.spinner.style.opacity = "0"
+        this.spinner.remove
+      }, 1480);
+
+
+    }
 
 
     this.authService.register(this.registrarForm1.value, this.registrarForm2.value).subscribe(
       data => {
         this.loading = true;
+        //lds-spinner
 
-        console.log(data);
-        console.log(data);
-        
+
 
         this.isSuccessful = true;
         this.isSignUpFailed = false;
-        for(var name in this.registrarForm1.controls) {
+        for (var name in this.registrarForm1.controls) {
           this.registrarForm1.controls[name].setValue('')
-          
-           
-           this.registrarForm1.controls[name].setErrors(null);
-        }
-        for(var name in this.registrarForm2.controls) {
-          this.registrarForm2.controls[name].setValue('')
-          
-           
-           this.registrarForm2.controls[name].setErrors(null);
-        }
-        
-        
-        //this.router.navigate(['/login'])
-        
 
-       
-        
+
+          this.registrarForm1.controls[name].setErrors(null);
+        }
+        for (var name in this.registrarForm2.controls) {
+          this.registrarForm2.controls[name].setValue('')
+
+
+          this.registrarForm2.controls[name].setErrors(null);
+        }
+
+
+        //this.router.navigate(['/login'])
+
+
+        this.sent = false
       },
       err => {
         console.warn(this.registrarForm1.value)
         console.warn(this.registrarForm2.value)
-        
         this.errorMessage = err.error.message;
         this.isSignUpFailed = true;
         this.loading = !false;
 
+        this.sent = false
+
       }
     );
+
+    this.registrarForm2.reset()
     /*this.enviado = true;
 
     if (this.registrarForm.invalid) {

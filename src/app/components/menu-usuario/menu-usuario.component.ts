@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from '../../Servicios/user.service'
 
 @Component({
   selector: 'app-menu-usuario',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuUsuarioComponent implements OnInit {
 
-  constructor() { }
+  me:string;
+  constructor(
+    private m:UserService) { }
 
   ngOnInit() {
+    this.m.getUserBoard().subscribe(
+      data=>{
+        alert(data)
+      },err=>{
+        alert(err)
+
+      }
+    )
+
   }
 
 }

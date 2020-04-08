@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
   constructor(
-    private router:Router,
+    private router: Router,
     private builder: FormBuilder,
     private tokenStorage: TokenStorageService,
     private authService: AuthService
@@ -80,7 +80,6 @@ export class LoginComponent implements OnInit {
     }, 1500);
 
 
-
     this.ventana1 = document.getElementById('popup1')
     this.ventana1.className = 'overlay2'
 
@@ -89,41 +88,39 @@ export class LoginComponent implements OnInit {
     this.cargando.className = 'loader'
 
 
-
-
     this.authService.login(this.iniciar.value).subscribe(
 
       data => {
         this.mensaje = data.message;
-        
+
 
         if (this.mensaje == "Error: Unauthorized") {
-          
-          
-          setTimeout(() => {
 
+
+          setTimeout(() => {
             this.ventana2 = document.getElementById('popup2')
             this.ventana2.className = 'popup'
-            this.ventana2.style.opacity = "1"
-          }, 1590);
+            this.ventana2.style.opacity = "0"
+          }, 1550);
           this.isLoginFailed = true;
 
           //this.errorMessage = err.error.message;
           //this.errorMessage = 'Usuario  y/o contraseña incorrecta';
-            this.mensaje=''
+          this.mensaje = ''
         } else {
-          
+          alert('else')
+
           this.tokenStorage.saveToke(data.accessToken);
           this.tokenStorage.saveUser(data);
           this.isLoginFailed = false;
           this.isLoggedIn = true;
           this.roles = this.tokenStorage.getUser().roles;
-          
+
           this.router.navigate(['/profile'])
-  .then(() => {
-    window.location.reload();
-  });
-          
+            .then(() => {
+              window.location.reload();
+            });
+
         }
         this.iniciar.reset()
 
@@ -131,8 +128,11 @@ export class LoginComponent implements OnInit {
 
       },
       err => {
+        alert('else err')
+          
+        this.ventana1 = document.getElementById('popup1')
+        this.ventana1.style.display = "none"
         this.isLoginFailed = true;
-
         this.errorMessage = err.error.message;
 
       }

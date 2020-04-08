@@ -12,7 +12,7 @@ import { MenuNoderadorComponent } from './components/menu-noderador/menu-noderad
 import { MenuUsuarioComponent } from './components/menu-usuario/menu-usuario.component';
 
 import {FormsModule } from '@angular/forms'
-import {HttpClientModule } from '@angular/common/http'
+import {HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import {ReactiveFormsModule } from '@angular/forms';
 import { RegistroCandidatosComponent } from './components/registro-candidatos/registro-candidatos.component'
@@ -21,6 +21,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule } from '@angular/material/icon';
+
+import { AuthInterceptor } from '../app/_helpers/AuthInterceptor';
 
 
 import { MatButtonModule } from '@angular/material/button';
@@ -74,10 +76,14 @@ import { NavegacionComponent} from './components/navegacion/navegacion.component
      FroalaViewModule.forRoot()
     
   ],
-  providers: [
-  
+  providers: [ {
+     provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  },
 
   ],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

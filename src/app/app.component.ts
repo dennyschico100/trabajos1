@@ -11,6 +11,7 @@ export class AppComponent implements OnInit {
   isLoggedIn = false;
   showAdminBoard = false;
   showModeratorBoard = false;
+  showUserBoard=false;
   username: string;
   title = 'trabajos-cliente';
 
@@ -53,10 +54,10 @@ export class AppComponent implements OnInit {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showUserBoard=this.roles.includes('ROLE_USER')
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR')
       this.username = user.email;
-
-
+      console.error(this.tokenStorageService.getToken())
 
     }
   }
