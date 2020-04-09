@@ -21,6 +21,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule } from '@angular/material/icon';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { AuthInterceptor } from '../app/_helpers/AuthInterceptor';
 
@@ -32,6 +33,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { NavegacionComponent} from './components/navegacion/navegacion.component';
+import { RegistroOpcionesComponent } from './components/registro-opciones/registro-opciones.component';
 
 
 //import { FlexLayoutModule } from '@angular/flex-layout';
@@ -49,7 +51,8 @@ import { NavegacionComponent} from './components/navegacion/navegacion.component
     MenuNoderadorComponent,
     MenuUsuarioComponent,
     RegistroCandidatosComponent,
-    NavegacionComponent
+    NavegacionComponent,
+    RegistroOpcionesComponent
 
   
   ],exports: [
@@ -73,7 +76,8 @@ import { NavegacionComponent} from './components/navegacion/navegacion.component
     MatStepperModule,
     CKEditorModule,
     FroalaEditorModule.forRoot(),
-     FroalaViewModule.forRoot()
+     FroalaViewModule.forRoot(),
+     MatTabsModule
     
   ],
   providers: [ {

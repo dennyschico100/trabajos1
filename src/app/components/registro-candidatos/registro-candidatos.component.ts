@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm, FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router ,NavigationEnd} from '@angular/router';
 import { Usuarios } from 'src/app/modelos/usuarios.model';
 import { AuthService } from '../../Servicios/auth.service'
 import { HostListener, Directive, HostBinding, Input } from '@angular/core';
@@ -64,8 +64,11 @@ export class RegistroCandidatosComponent implements OnInit {
     private router: Router,
     private authService: AuthService
 
-  ) { }
+  ) { 
 
+    this.routeEvent(this.router);
+  }
+ 
   isVertical = false;
   public innerWidth: any;
   proceder = false
@@ -74,6 +77,7 @@ export class RegistroCandidatosComponent implements OnInit {
     this.innerWidth = window.innerWidth;
   }
 
+  
 
   hand() {
 
@@ -96,8 +100,16 @@ export class RegistroCandidatosComponent implements OnInit {
   }
   validar() {
 
-
   }
+
+
+  routeEvent(router: Router){
+    router.events.subscribe(e => {
+      if(e instanceof NavigationEnd){
+        console.error(e.url)
+      }
+    }); }
+
 
 
   ngOnInit() {

@@ -9,6 +9,8 @@ import {MenuAdminComponent} from './components/menu-admin/menu-admin.component';
 import { MenuNoderadorComponent} from './components/menu-noderador/menu-noderador.component';
 import { MenuUsuarioComponent } from './components/menu-usuario/menu-usuario.component';
 import {RegistroCandidatosComponent} from './components/registro-candidatos/registro-candidatos.component';
+import {RegistroOpcionesComponent} from './components/registro-opciones/registro-opciones.component';
+
 import { NavegacionComponent} from './components/navegacion/navegacion.component';
 
 
@@ -23,6 +25,9 @@ const routes: Routes = [
   { path: 'user', component: MenuUsuarioComponent },
   { path: 'mod', component: MenuNoderadorComponent},
   { path: 'admin', component: MenuAdminComponent },
+  {
+    path:'registro-opciones',
+    component: RegistroOpcionesComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 
 ];

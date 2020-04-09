@@ -20,10 +20,10 @@
                 <input matInput formControlName="nombres" type="text" id="signupusername" class="form-control"
                   placeholder="*Nombres" required>
                 <!--<div class="text-danger"><em>This will be your login name!</em></div>-->
-                <span *ngIf="registrarForm1.get('nombres').errors  && (registrarForm1.get('nombres').touched )  "
+                <span  *ngIf="registrarForm1.get('nombres').errors  && (registrarForm1.get('nombres').touched )  "
                   class="help-block text-danger ">
 
-                  <span *ngIf="registrarForm1.get('nombres').errors.required ">
+                  <span class="mr-4" *ngIf="registrarForm1.get('nombres').errors.required ">
                     Ingrese tus nombres!
 
                   </span>
@@ -50,7 +50,7 @@
                   *ngIf="registrarForm1.get('apellidos').errors  && (registrarForm1.get('apellidos').touched )  "
                   class="help-block text-danger ">
 
-                  <mat-error *ngIf="registrarForm1.get('apellidos').errors.required   ">
+                  <mat-error class="mr-4" *ngIf="registrarForm1.get('apellidos').errors.required   ">
                     Ingrese tus Apellidos!
 
                   </mat-error>
@@ -144,7 +144,7 @@
 
                   Ingresa tu correo electronico
                 </mat-error>
-                <mat-error *ngIf="registrarForm2.get('email').errors?.email   ">
+                <mat-error  class="mr-4"  *ngIf="registrarForm2.get('email').errors?.email   ">
                   Ingrese un email valido Ej:@gmail.com !
 
                 </mat-error>
@@ -154,16 +154,15 @@
               <mat-label>Contraseña</mat-label>
               <div class="form-group  was-validated" [ngClass]="{'has-error':registrarForm2.get('contraseña').invalid &&
                   (registrarForm2.get('contraseña').touched || registrarForm2.get('contraseña').dirty)}">
-
                 <input matInput name="contraseña" formControlName="contraseña" type="password" id="signuppassword"
                   class="form-control" placeholder="*Contraseña" required>
                 <mat-error
                   *ngIf="registrarForm2.get('contraseña').errors?.required  && (registrarForm2.get('contraseña').dirty ||  registrarForm2.get('contraseña').touched )   "
-                  class="">
+                  class=" mr-4">
                   Ingresa tu Contraseña
 
                 </mat-error>
-                <mat-error class="r" *ngIf="registrarForm2.get('contraseña').errors?.minlength ">
+                <mat-error class="mt-4" *ngIf="registrarForm2.get('contraseña').errors?.minlength ">
                   Debe tener almenos 6 caracteres!
 
                 </mat-error>
@@ -181,16 +180,16 @@
                 <input matInput compare="contraseña" name="contraseña2" formControlName="contraseña2" type="password"
                   id="" class="form-control" placeholder="*Confirmar Contraseña" required>
 
-                <span *ngIf="registrarForm2.get('contraseña2').errors?.required  && (registrarForm2.get('contraseña2').compare
+                <span   *ngIf="registrarForm2.get('contraseña2').errors?.required  && (registrarForm2.get('contraseña2').compare
                       ||  registrarForm2.get('contraseña2').touched )   " class="text-danger ">
                   Repite tu Contraseña
                 </span>
-                <mat-error class="" *ngIf="registrarForm2.get('contraseña2').errors?.minlength ">
+                <mat-error class="mt-4" *ngIf="registrarForm2.get('contraseña2').errors?.minlength ">
                   Debe tener almenos 6 caracteres!
 
                 </mat-error>
 
-                <div class="text-danger text-uppercase" *ngIf="registrarForm2.get('contraseña2').errors?.mustMatch">
+                <div class=" mt-4 text-danger text-uppercase" *ngIf="registrarForm2.get('contraseña2').errors?.mustMatch">
                   Contraseñas no coinciden ! </div>
 
 
