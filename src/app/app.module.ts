@@ -34,6 +34,7 @@ import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { NavegacionComponent} from './components/navegacion/navegacion.component';
 import { RegistroOpcionesComponent } from './components/registro-opciones/registro-opciones.component';
+import { RegistroEmpresaComponent } from './components/registro-empresa/registro-empresa.component';
 
 
 //import { FlexLayoutModule } from '@angular/flex-layout';
@@ -52,7 +53,8 @@ import { RegistroOpcionesComponent } from './components/registro-opciones/regist
     MenuUsuarioComponent,
     RegistroCandidatosComponent,
     NavegacionComponent,
-    RegistroOpcionesComponent
+    RegistroOpcionesComponent,
+    RegistroEmpresaComponent
 
   
   ],exports: [

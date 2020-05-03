@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm, FormGroup, Validators, FormBuilder, FormControl } from '@angular/forms';
-import { Router ,NavigationEnd} from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { Usuarios } from 'src/app/modelos/usuarios.model';
 import { AuthService } from '../../Servicios/auth.service'
 import { HostListener, Directive, HostBinding, Input } from '@angular/core';
@@ -58,17 +58,19 @@ export class RegistroCandidatosComponent implements OnInit {
 
 
 
+
   constructor(
     private formBuilder: FormBuilder,
     private formBuilder2: FormBuilder,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private activedRoute: ActivatedRoute
 
-  ) { 
+  ) {
 
     this.routeEvent(this.router);
   }
- 
+
   isVertical = false;
   public innerWidth: any;
   proceder = false
@@ -77,7 +79,6 @@ export class RegistroCandidatosComponent implements OnInit {
     this.innerWidth = window.innerWidth;
   }
 
-  
 
   hand() {
 
@@ -103,16 +104,24 @@ export class RegistroCandidatosComponent implements OnInit {
   }
 
 
-  routeEvent(router: Router){
+  routeEvent(router: Router) {
     router.events.subscribe(e => {
-      if(e instanceof NavigationEnd){
-        console.error(e.url)
+      if (e instanceof NavigationEnd) {
+        //console.error(e.url)
       }
-    }); }
-
+    });
+  }
 
 
   ngOnInit() {
+    let parametro = this.activedRoute.snapshot.params;
+    for (let index = 0; index < 10; index++) {
+      console.log(parametro.user)
+      
+    }
+    if (parametro.id) {
+        console.log(parametro.id)
+    }
 
     this.innerWidth = window.innerWidth;
     if (this.innerWidth < 728) {
@@ -202,7 +211,7 @@ export class RegistroCandidatosComponent implements OnInit {
     this.habilitar = false
 
     this.loading = true;
-
+    
     function myFunction() {
 
     }

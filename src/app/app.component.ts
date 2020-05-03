@@ -28,17 +28,32 @@ export class AppComponent implements OnInit {
 
 
     this.innerWidth = window.innerWidth;
-    if(this.innerWidth < 728){
-      let nav= document.getElementById('menu')
+    if(this.innerWidth < 1024){
+
+   
+      let ul =document.getElementById( 'list-1')
+      //ul.classList.add('navbar-nav')
+
+
+      //let nave = document.getElementById('nave');
+      
+      //nave.classList.remove('d-lg-block');
+      //nave.classList.remove('nav-menu');
+      
+      //nave.classList.add('mobile_nav')
+      
+
+
+      /*let nav= document.getElementById('menu')
       let classesToAdd = [ 'mt-0', 'navbar' ];
       
-    nav.classList.add('navbar');
+       nav.classList.add('navbar');
           
       //nav.classList.add('navbar');
       
         
       let ul =document.querySelector('.list-1')
-      ul.classList.add('navbar-nav')
+      ul.classList.add('navbar-nav')*/
       
 
 

@@ -8,8 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class RegistroOpcionesComponent implements OnInit {
 
   constructor() { }
+  roles:any=[ 'user','moderator' ];
 
+  rols:any={
+    uno:'user',
+    dos:'moderator'
+  }
   ngOnInit() {
+    for (let index = 0; index < 10; index++) {
+      console.log(this.roles[1] )  
+      
+    }
   }
 
 }

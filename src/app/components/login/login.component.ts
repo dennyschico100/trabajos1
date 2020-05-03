@@ -119,12 +119,11 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/profile'])
             .then(() => {
               window.location.reload();
+              
             });
 
         }
         this.iniciar.reset()
-
-
 
       },
       err => {
