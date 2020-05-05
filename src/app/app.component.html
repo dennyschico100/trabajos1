@@ -185,36 +185,38 @@
 
     #menu-bar {}
 
-    @media (min-width:577px){
+    @media (min-width:577px) {
       #list-1 li {
 
         left: 10%;
-
-
-
       }
-      #home{
+
+      #home {
         position: relative;
-        left: 10%;
-        
-      }
-      #list-1 li:first-child{
-        left: 10%;
-        
+        left: 0%;
 
       }
-      .logo{
-        left: 13%;
-        
+
+      #list-1 li:first-child {
+        left: 11%;
+
       }
-      
+
+      .logo {
+        left: 13%;
+
+      }
+
     }
-    @media screen and (max-width:1024px) {
+
+    /* ANTES 1024PX*/
+    @media screen and (max-width:1200px) {
       #header {
         border: px solid green;
         height: 70px;
       }
-      #boton-up{
+
+      #boton-up {
         position: absolute;
         top: -30px;
         right: 0px;
@@ -228,13 +230,12 @@
         font-size: 25px;
         color: #fb246a;
       }
-      .dropdown-item:hover{
+
+      .dropdown-item:hover {
         background-color: #fff;
       }
 
-      #list-1 li {
-        
-      }
+      #list-1 li {}
 
       #p {
         top: 100px;
@@ -245,7 +246,6 @@
       #menu-bar:checked~#menu {
         transform: translateX(0%);
         transition: all 0.5s;
-
 
       }
 
@@ -259,18 +259,23 @@
         background-color: #fff;
         position: absolute;
         top: 55px;
-        left: 0px;
         
+        border: 3px solid navy;
+        left: 0px;
         width: 100%;
+      }
+      
+      .ultimo-link{
+        
+        padding-right: 30px;
+        
       }
 
       .nav-menu,
       .nav-menu * {
         margin: 0;
         margin-right: 10px;
-
         padding: 0;
-
         list-style: none;
       }
 
@@ -318,7 +323,7 @@
         text-decoration: none;
       }
 
-  
+
 
       /*  FIIIIIIIIIIIIIN DEL MOBILE YO L CREE   */
     }
@@ -332,14 +337,26 @@
         display: none;
       }
     }
-    #menu-bar{
-  display: none;
-}
-    
 
-    @media (min-width:1025px) {
-      
-  .nav-menu,
+    /* arreglando botones de cuenta */
+    @media (min-width:990) and (max-width:1209px) {
+
+      .nav-menu {
+        
+      }
+      #img-contendeor {
+
+      }
+    }
+
+    #menu-bar {
+      display: none;
+    }
+
+
+    @media (min-width:995px) {
+
+      .nav-menu,
       .nav-menu * {
         margin: 0;
         margin-right: 10px;
@@ -396,7 +413,7 @@
 
       .nav-menu .drop-down ul {
         display: block;
-        
+
         position: absolute;
         left: 25px;
         top: calc(100% - 0px);
@@ -412,19 +429,20 @@
       .nav-menu .drop-down:hover>ul {
         opacity: 1;
         top: 100%;
-        
+
         visibility: visible;
         border-radius: 15px;
       }
-      
+
       #abajo:hover>ul {
         opacity: 1;
-        
+
         top: 100%;
         visibility: visible;
         border-radius: 15px;
 
       }
+
       .nav-menu .drop-down li {
         min-width: 180px;
         position: relative;
@@ -483,6 +501,7 @@
       }
 
     }
+
     @media (max-width: 1366px) {
       .nav-menu .drop-down .drop-down ul {
         left: -90%;
@@ -628,15 +647,14 @@
     
    
   */
- 
-
   </style>
-  
+
   <!--col-md-12 col-xs-12  offset-md-0
 para la class man -->
   <div id="" style="border:px solid #037e8c; " class="">
 
-    <header id="header" style="border:px solid #fb246a; background-color: #fff;" class="fixed-top d-flex align-items-center">
+    <header id="header" style="border-bottom:5px solid #fb246a; background-color: #fff;"
+      class="fixed-top d-flex align-items-center">
       <div class="container d-flex align-items-center">
 
         <div class="logo mr-auto">
@@ -644,7 +662,7 @@ para la class man -->
           <!-- Uncomment below if you prefer to use an image logo -->
           <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         </div>
-<!--
+        <!--
   
         <input type="checkbox" id="menu-bar">
 
@@ -686,15 +704,16 @@ para la class man -->
 
         <nav class="nav-menu navbar navbar-expand-lg   ">
           <a style="color: #fff" class="navbar-brand" href="#">Health</a>
-          <button id="boton-up" style="border:0px solid #fff; background-color: #fff " class="navbar-toggler navbar-light  "
-            type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button id="boton-up" style="border:0px solid #fff; background-color: #fff "
+            class="navbar-toggler navbar-light  " type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="fa fa-bars"></span>
           </button>
-  
+
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="mr-auto">
-  
+
             </div>
             <ul id="list-1" class="navbar-nav ">
               <li id="home" class="nav-item active">
@@ -703,36 +722,34 @@ para la class man -->
               <li class="nav-item">
                 <a class="nav-link " href="#"></a>
               </li>
-              <li id="abajo" class="nav-item dropdown drop-down"><a class="nav-link "  id="navbarDropdown" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Servicios</a>
+              <li id="abajo" class="nav-item dropdown drop-down"><a class="nav-link " id="navbarDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
                 <ul style="border:0px solid #fff;" class="dropdown-menu">
                   <li class="drop-down"><a href="#">Contrata </a></li>
                   <li class="drop-down"><a href="#">Encuentra un trabajo</a>
-  
+
                   </li>
-  
+
                 </ul>
               </li>
-              <li id="abajo" class="nav-item dropdown drop-down"><a class="nav-link "  id="navbarDropdown" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Servicios</a>
+              <li id="abajo" class="nav-item dropdown drop-down"><a class="nav-link " id="navbarDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
                 <ul style="border:0px solid #fff;" class="dropdown-menu">
                   <li class="drop-down"><a href="#">Contrata </a></li>
                   <li class="drop-down"><a href="#">Encuentra un trabajo</a>
-  
+
                   </li>
-  
-                </ul>
-              </li> <li id="abajo" class="nav-item dropdown drop-down"><a class="nav-link "  id="navbarDropdown" role="button"
-                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Servicios</a>
-                <ul style="border:0px solid #fff;" class="dropdown-menu">
-                  <li class="drop-down"><a href="#">Contrata </a></li>
-                  <li class="drop-down"><a href="#">Encuentra un trabajo</a>
-  
-                  </li>
-  
+
                 </ul>
               </li>
-               <!--
+              <li  style="padding-right: 30px;" id="abajo" class="ultimo-link nav-item dropdown drop-down"><a class="nav-link " id="navbarDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Contactanos</a>
+                <ul  style="border:0px solid #fff;" class="dropdown-menu">
+                  
+
+                </ul>
+              </li>
+              <!--
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -745,9 +762,9 @@ para la class man -->
                   <a class="dropdown-item" href="#">Something else here</a>
                 </div>
               </li>-->
-              
+
             </ul>
-  
+
           </div>
         </nav>
 
@@ -765,72 +782,159 @@ para la class man -->
           </li>
         </ul>
       </div>
-   
-    
-    
-    
-    
-    
+
+
+
+
+
+
     </header>
-    
-    <div   class="">
-      
-    <img id="imagen"  height="600px" src="1.jpg" alt="banner">
-        <div id=""  style="border: px solid  aqua;"  class="" >
-       
-  
-          </div>  
+
+    <div id="img-contenedor" class="">
+      <!--
+
+      <img id="imagen" height="600px" src="1.jpg" alt="banner"> -->
+      <div id="" style="border: px solid  aqua;" class="">
+
+
+      </div>
     </div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id voluptatibus. Accusantium!</p>
-vv
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nisi voluptatem aliquam veritatis, nobis
+      consequatur iure totam incidunt exercitationem debitis sunt non dolore distinctio architecto tempora libero id
+      voluptatibus. Accusantium!</p>
+    vv
 
 
 
     p
-  
-    
+
+
     <!--
     <h2>NOMBRE </h2>
     <input type="checkbox" id="menu-bar">
@@ -1279,4 +1383,4 @@ vv
 
   </div>
 
-  </div>
+</div>
