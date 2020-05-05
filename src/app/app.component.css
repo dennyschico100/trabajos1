@@ -5,30 +5,7 @@
     margin-top: 40px;
     padding: 0;
 }
-#img-contenedor{
-    border-top: 4px solid black;
-    margin-top: 35px;
-    z-index: 98;
-    background-image: url('./1.jpg');
-    background-position: center;
-    background-size: cover;
-    height: 610px;
 
-    max-height: 620px;
-    background-repeat: no-repeat;
-}
-@media ( min-width:990 and max-width:1203px ){
-    #img-contendeor{
-        
-    }
-}
-@media screen and (max-width:7568px){
-    #img-contenedor{
-        height: 398px;
-        height: 400px;
-    
-    }
-}
 #con-header{
     
 }
