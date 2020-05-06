@@ -35,6 +35,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { NavegacionComponent} from './components/navegacion/navegacion.component';
 import { RegistroOpcionesComponent } from './components/registro-opciones/registro-opciones.component';
 import { RegistroEmpresaComponent } from './components/registro-empresa/registro-empresa.component';
+import { PostOfertaComponent } from './components/post-oferta/post-oferta.component';
 
 
 //import { FlexLayoutModule } from '@angular/flex-layout';
@@ -54,7 +55,8 @@ import { RegistroEmpresaComponent } from './components/registro-empresa/registro
     RegistroCandidatosComponent,
     NavegacionComponent,
     RegistroOpcionesComponent,
-    RegistroEmpresaComponent
+    RegistroEmpresaComponent,
+    PostOfertaComponent
 
   
   ],exports: [

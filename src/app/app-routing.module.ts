@@ -12,7 +12,7 @@ import {RegistroCandidatosComponent} from './components/registro-candidatos/regi
 import {RegistroOpcionesComponent} from './components/registro-opciones/registro-opciones.component';
 
 import { NavegacionComponent} from './components/navegacion/navegacion.component';
-
+import {PostOfertaComponent} from './components/post-oferta/post-oferta.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'user', component: MenuUsuarioComponent },
   { path: 'mod', component: MenuNoderadorComponent},
   { path: 'admin', component: MenuAdminComponent },
+  { path:'post-oferta',component:PostOfertaComponent },
   {
     path:'registro-opciones',
     component: RegistroOpcionesComponent },
