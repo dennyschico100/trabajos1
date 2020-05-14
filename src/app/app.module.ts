@@ -27,6 +27,9 @@ import { AuthInterceptor } from '../app/_helpers/AuthInterceptor';
 
 
 import { MatButtonModule } from '@angular/material/button';
+import {MatNativeDateModule,MatDatepickerModule } from '@angular/material';
+
+
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatStepper,MatStepLabel,MatStepperModule,MatHorizontalStepper} from '@angular/material/stepper';
 import { MatSelectModule } from '@angular/material/select';
@@ -62,7 +65,8 @@ import { PostOfertaComponent } from './components/post-oferta/post-oferta.compon
   ],exports: [
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    
   ],
   imports: [
     BrowserModule,
@@ -79,10 +83,13 @@ import { PostOfertaComponent } from './components/post-oferta/post-oferta.compon
     MatSelectModule,
     MatStepperModule,
     CKEditorModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+  
     FroalaEditorModule.forRoot(),
      FroalaViewModule.forRoot(),
-     MatTabsModule
-    
+     MatTabsModule,
+ 
   ],
   providers: [ {
      provide: HTTP_INTERCEPTORS,

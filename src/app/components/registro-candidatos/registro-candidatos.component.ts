@@ -140,7 +140,6 @@ export class RegistroCandidatosComponent implements OnInit {
 
     this.resetForm();
     this.registrarForm1 = new FormGroup({
-
       nombres: new FormControl('', Validators.required),
       apellidos: new FormControl('', Validators.required),
       nacionalidad: new FormControl('', Validators.required),
@@ -160,7 +159,7 @@ export class RegistroCandidatosComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       contraseña: ['', [Validators.required, Validators.minLength(6)]],
       contraseña2: ['', [Validators.required, Validators.minLength(6)]],
-
+      
     }, {
       validator: this.MustMatch('contraseña', 'contraseña2')
     }

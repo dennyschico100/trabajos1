@@ -1,0 +1,147 @@
+<div id="" style="border:px solid #037e8c; " class="">
+
+    <header id="header" style="border-bottom:5px solid #fb246a; background-color: #fff;"
+        class="fixed-top d-flex align-items-center">
+        <div class="container d-flex align-items-center">
+
+            <div class="logo mr-auto">
+                <h1 id="" class="text-light"><a  routerLink="home"  ><span style="color: #28395a;">Empleos SV</span></a>
+                </h1>
+                <!-- Uncomment below if you prefer to use an image logo -->
+                <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            </div>
+            <!--
+  
+        <input type="checkbox" id="menu-bar">
+
+        <label for="menu-bar" class="fas fa-bars"></label>
+        <nav id="menu" class="navbar nav-menu  d-lg-block">
+
+          <ul class="" id="list-1">
+            <li class="active"><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+
+            <li><a>Pricing</a></li>
+            <li id="abajo" class="nav-item dropdown drop-down"><a class="nav-link "  id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Servicios</a>
+              <ul style="border:0px solid #fff;" class="dropdown-menu">
+                <li class="drop-down"><a href="#">Contrata </a></li>
+                <li class="drop-down"><a href="#">Encuentra un trabajo</a>
+
+                </li>
+
+              </ul>
+            </li>
+            
+            	<li class="nav-item  dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <ul  class="dropdown-menu" >
+                    <li class="dropdown-item" href="#">Action</li>
+                    <li class="dropdown-item" href="#">Another action</li>
+                    
+                  </ul>
+                </li>
+            
+
+
+          </ul>
+        </nav> .nav-menu -->
+
+            <nav class="nav-menu navbar navbar-expand-lg   ">
+                <a style="display: none; color: #fff" class="navbar-brand" href="#">Health</a>
+                <button id="boton-up" style="border:0px solid #fff; background-color: #fff "
+                    class="navbar-toggler navbar-light  " type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="fa fa-bars"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="mr-auto">
+
+                    </div>
+                    <ul id="list-1" class="navbar-nav ">
+                        <li id="home" class="nav-item active">
+                            <a class="nav-link"  routerLink="home"  >Home <span class="sr-only"></span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#"></a>
+                        </li>
+                        <li id="abajo" class="nav-item dropdown drop-down"><a class="nav-link " id="navbarDropdown"
+                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Servicios</a>
+                            <ul style="border:0px solid #fff;" class="dropdown-menu">
+                                <li class="drop-down"><a href="#">Contrata </a></li>
+                                <li class="drop-down"><a href="#">Encuentra un trabajo</a>
+
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li id="abajo" class="nav-item dropdown drop-down"><a class="nav-link " id="navbarDropdown"
+                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">Servicios</a>
+                            <ul style="border:0px solid #fff;" class="dropdown-menu">
+                                <li class="drop-down"><a href="#">Contrata </a></li>
+                                <li class="drop-down"><a href="#">Encuentra un trabajo</a>
+
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li style="padding-right: 30px;" id="abajo" class="ultimo-link nav-item dropdown drop-down"><a
+                                class="nav-link " id="navbarDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Contactanos</a>
+                            <ul style="border:0px solid #fff;" class="dropdown-menu">
+
+
+                            </ul>
+                        </li>
+                        <!--
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>-->
+
+                    </ul>
+
+                </div>
+            </nav>
+
+            <div *ngIf="!isLoggedIn" class="m-3 header-btn d-none f-right d-lg-block">
+                <a  routerLink="registro-opciones" style="background-color: #fb246a;color: #fff;" href="#" class="btn head-btn1">Register</a>
+                <a routerLink="login"   style="margin: 7px; padding: 6px;" class="btn head-btn2">Iniciar Sesion</a>
+            </div>
+            <ul class="drop-menu ml-auto children-list2 " *ngIf="isLoggedIn">
+                <li class="nav-item">
+                    <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#">Nueva oferta</a></li>
+                <li class="nav-item">
+                    <a href class="nav-link" (click)="logout()">LogOut</a>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+
+
+    </header>
+
+
+
+
+</div>

@@ -4,47 +4,112 @@
     <!--<ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
         <p>{{ content }}</p>-->
     <form class="form" method="post" [formGroup]="publicarForm">
-      <div class="form-group">
+
+      <div class="form-group " [ngClass]="{'has-error':publicarForm.get('titulo_oferta').errors &&
+      (publicarForm.get('titulo_oferta').touched || publicarForm.get('titulo_oferta').dirty)}">
         <div class="col-sm-4">
-          <label for=""><strong>Titulo</strong></label>
-          <input class="form-control" type="text" name="" required>
+          <label for=""><strong>Titulo de la oferta</strong></label>
+          <input formControlName="titulo_oferta" class="form-control" type="text" name="" required>
+          <span *ngIf="publicarForm.get('titulo_oferta').errors  && (publicarForm.get('titulo_oferta').touched )  "
+            class="help-block mt-5  text-danger ">
+            <strong class="mr-4" *ngIf="publicarForm.get('titulo_oferta').errors.required">
+              Dijite el titulo de la oferta de empleo
+
+            </strong>
+            <strong class="mt-4" *ngIf="publicarForm.get('titulo_oferta').errors?.minlength ">
+              Debe tener almenos 6 caracteres!
+
+            </strong>
+
+          </span>
 
         </div>
+
+
       </div>
 
-      <div class="from-group">
+      <div class="form-group " [ngClass]="{'has-error':publicarForm.get('cargo_solicitado').errors &&
+      (publicarForm.get('cargo_solicitado').touched || publicarForm.get('cargo_solicitado').dirty)}">
         <div class="col-sm-4">
-          <label for=""><strong>Cargo a solicitar</strong></label>
-          <input class="form-control" type="text" name="" required>
+          <label for=""><strong>Puesto a solicitar</strong></label>
+          <input formControlName="cargo_solicitado" class="form-control" type="text" name="" required>
+          <span
+            *ngIf="publicarForm.get('cargo_solicitado').errors  && (publicarForm.get('cargo_solicitado').touched )  "
+            class="help-block mt-5  text-danger ">
+            <strong class="mr-4" *ngIf="publicarForm.get('cargo_solicitado').errors.required">
+              Dijite el puesto de la oferta de empleo
+
+            </strong>
+            <strong class="mt-4" *ngIf="publicarForm.get('cargo_solicitado').errors?.minlength ">
+              Debe tener almenos 6 caracteres!
+
+            </strong>
+
+          </span>
+
         </div>
+
+
       </div>
 
 
-      <div class="from-group">
-        <div class="col-sm-4 mt-2 ">
+
+
+
+
+      <div class="from-group" [ngClass]="{'has-error':publicarForm.get('puestos_vacantes').errors &&
+      (publicarForm.get('puestos_vacantes').touched || publicarForm.get('puestos_vacantes').dirty)}">
+        <div class="col-sm-4 mt-2">
           <label for=""><strong>Puestos Vacantes</strong></label>
-          <input class="form-control" type="number" min="1" name="" required>
+          <input formControlName="puestos_vacantes" class="form-control" type="number" min="1" name="" required>
+          <span
+            *ngIf="publicarForm.get('puestos_vacantes').errors  && (publicarForm.get('puestos_vacantes').touched )  "
+            class="help-block mt-5  text-danger ">
+            <strong class="mr-4" *ngIf="publicarForm.get('puestos_vacantes').errors.required">
+              Dijite la cantidad de vacantes
+
+            </strong>
+
+
+          </span>
 
         </div>
 
       </div>
 
-      <div class="col-sm-4 mt-3" style="position: relative; left: 0px;">
-        <div class="form-group">
+      <div class="form-group" [ngClass]="{'has-error':publicarForm.get('tipo_de_contratacion').errors &&
+        (publicarForm.get('tipo_de_contratacion').touched || publicarForm.get('tipo_de_contratacion').dirty)}">
+
+        <div class="col-sm-4 mt-3" style="position: relative; left: 0px;">
+
           <label for="my-select"><strong>Tipo de Contatacion</strong></label>
-          <select class="selectpicker form-control" data-width="25%">
-            <option>Por Proyecto</option>
+          <select formControlName="tipo_de_contratacion" class="selectpicker form-control" data-width="25%">
             <option>Plaza Fija</option>
+
+            <option>Por Proyecto</option>
+
             <option>Eventual</option>
             <option>Pasantia</option>
           </select>
+          <span
+            *ngIf="publicarForm.get('tipo_de_contratacion').errors  && (publicarForm.get('tipo_de_contratacion').touched )  "
+            class="help-block mt-5  text-danger ">
+            <strong class="mr-4" *ngIf="publicarForm.get('tipo_de_contratacion').errors.required">
+              Seleccione el tipo de contratacion
+
+            </strong>
+
+
+          </span>
+
 
         </div>
       </div>
-      <div class="col-sm-4 mt-3">
-        <div class="form-group">
-          <label for="my-select"><strong>Tipo de Contatacion</strong></label>
-          <select class="selectpicker form-control" data-width="25%">
+      <div class="form-group" [ngClass]="{'has-error':publicarForm.get('nivel_de_experiencia').errors &&
+      (publicarForm.get('nivel_de_experiencia').touched || publicarForm.get('nivel_de_experiencia').dirty)}">
+        <div class="col-sm-4 mt-3">
+          <label for="my-select"><strong>Nivel de experiencia</strong></label>
+          <select formControlName="nivel_de_experiencia" class="selectpicker form-control" data-width="25%">
             <option>Sin experiencia previa</option>
             <option>Menos de un año </option>
             <option> 1 -3 años</option>
@@ -52,63 +117,147 @@
             <option>Mas de 5 años</option>
 
           </select>
+          <span
+            *ngIf="publicarForm.get('nivel_de_experiencia').errors  && (publicarForm.get('nivel_de_experiencia').touched )  "
+            class="help-block mt-5  text-danger ">
+            <strong class="mr-4" *ngIf="publicarForm.get('nivel_de_experiencia').errors.required">
+              Seleccione el nivel de experiencia
+
+            </strong>
+
+
+          </span>
+
+        </div>
+
+      </div>
+      <div class="form-group" [ngClass]="{'has-error':publicarForm.get('genero').errors &&
+      (publicarForm.get('genero').touched || publicarForm.get('genero').dirty)}">
+        <div class="col-sm-4 mt-3">
+          <label for="my-select"><strong>Genero</strong></label>
+          <select formControlName="genero" class="selectpicker form-control" data-width="25%">
+            <option>Indiferente</option>
+            <option>Masculino</option>
+            <option>Femenino</option>
+
+
+          </select>
+          <span *ngIf="publicarForm.get('genero').errors  && (publicarForm.get('genero').touched )  "
+            class="help-block mt-5  text-danger ">
+            <strong class="mr-4" *ngIf="publicarForm.get('genero').errors.required">
+              Seleccione el genero
+
+            </strong>
+
+
+          </span>
+
+        </div>
+
+      </div>
+      <div class="form-group" [ngClass]="{'has-error':publicarForm.get('edad').errors &&
+      (publicarForm.get('edad').touched || publicarForm.get('edad').dirty)}">
+        <div class="col-sm-4 mt-3">
+          <label for="my-select"><strong>Edad</strong></label>
+          <input formControlName="edad" class="form-control" type="text" placeholder="18/45">
+          <span *ngIf="publicarForm.get('edad').errors  && (publicarForm.get('edad').touched )  "
+            class="help-block mt-5  text-danger ">
+            <strong class="mr-4" *ngIf="publicarForm.get('edad').errors.required">
+              Ingrese el rango de edad
+
+            </strong>
+
+
+          </span>
+
+        </div>
+
+      </div>
+      <div class="col-sm-4 mt-3" [ngClass]="{'has-error':publicarForm.get('vehiculo').errors &&
+      (publicarForm.get('vehiculo').touched || publicarForm.get('vehiculo').dirty)}">
+        <div class="form-group">
+          <label for="my-select"><strong>Vehiculo</strong></label>
+          <select formControlName="vehiculo" class="selectpicker form-control" data-width="25%">
+            <option>SI</option>
+            <option>NO</option>
+
+
+          </select>
+          <span *ngIf="publicarForm.get('vehiculo').errors  && (publicarForm.get('vehiculo').touched )  "
+            class="help-block mt-5  text-danger ">
+            <strong class="mr-4" *ngIf="publicarForm.get('vehiculo').errors.required">
+              Selecciona una opcion !
+
+            </strong>
+
+
+          </span>
+
+        </div>
+
+      </div>
+      <div class="form-group" [ngClass]="{'has-error':publicarForm.get('pais').errors &&
+      (publicarForm.get('pais').touched || publicarForm.get('pais').dirty)}">
+        <div class="col-sm-4 mt-3">
+          <label for="my-select"><strong>Pais</strong></label>
+          <select formControlName="pais" class="selectpicker form-control" data-width="25%">
+            <option>El Salvador</option>
+
+
+          </select>
+          <span *ngIf="publicarForm.get('pais').errors  && (publicarForm.get('pais').touched )  "
+            class="help-block mt-5  text-danger ">
+            <strong class="mr-4" *ngIf="publicarForm.get('pais').errors.required">
+              Selecciona una opcion !
+
+            </strong>
+
+
+          </span>
+
+
+        </div>
+
+      </div>
+      <div class="form-group"  [ngClass]="{'has-error':publicarForm.get('departamento').errors &&
+      (publicarForm.get('departamento').touched || publicarForm.get('departamento').dirty)}"  >
+        <div  class="col-sm-4 mt-3"  >
+          <label for="my-select"><strong>Departamento</strong></label>
+          <select  formControlName="departamento" class="selectpicker form-control" data-width="25%">
+            <option>San Salvador</option>
+
+          </select>   <span *ngIf="publicarForm.get('departamento').errors  && (publicarForm.get('departamento').touched )  "
+          class="help-block mt-5  text-danger ">
+          <strong class="mr-4" *ngIf="publicarForm.get('departamento').errors.required">
+            Selecciona un departamento !
+
+          </strong>
+
+
+        </span>
+
 
         </div>
 
       </div>
       <div class="col-sm-4 mt-3">
-          <div class="form-group">
-            <label for="my-select"><strong>Genero</strong></label>
-            <select class="selectpicker form-control" data-width="25%">
-              <option>Indiferente</option>
-              <option>Masculino</option>
-              <option>Femenino</option>
-             
-  
-            </select>
-  
-          </div>
-  
+        <div class="form-group">
+          <label for="my-select"><strong>Fecha de expiracion</strong></label>
+
+          <mat-form-field>
+            <mat-label>Selecciona </mat-label>
+            <input formControlName="expiracion" matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
         </div>
-        <div class="col-sm-4 mt-3">
-            <div class="form-group">
-              <label for="my-select"><strong>Vehiculo</strong></label>
-              <select class="selectpicker form-control" data-width="25%">
-                <option>SI</option>
-                <option>NO</option>
-                
-            
-              </select>
-    
-            </div>
-    
-          </div>
-          <div class="col-sm-4 mt-3">
-              <div class="form-group">
-                <label for="my-select"><strong>Pais</strong></label>
-                <select class="selectpicker form-control" data-width="25%">
-                  <option>El Salvador</option>
-              
-                </select>
-      
-              </div>
-      
-            </div>
-            <div class="col-sm-4 mt-3">
-                <div class="form-group">
-                  <label for="my-select"><strong>Departamento</strong></label>
-                  <select class="selectpicker form-control" data-width="25%">
-                    <option>San Salvador</option>
-                
-                  </select>
-        
-                </div>
-        
-              </div>
-          
-          
-        
-  
+
+      </div>
+
+
+
+
 
       <!--
       (change)="onChange($event)" 
@@ -116,16 +265,36 @@
       <div class="form-group">
         <div class="col-sm-12 mt-2">
           <label for=""><strong>Detalle de la oferta</strong></label>
-          <ckeditor formControlName='editor' [editor]="Editor">
+          <ckeditor style="height: 400px;" formControlName='editor' [editor]="Editor">
 
           </ckeditor>
+          <span *ngIf="publicarForm.get('editor').errors  && (publicarForm.get('editor').touched )  "
+          class="help-block mt-5  text-danger ">
+          <strong class="mr-4" *ngIf="publicarForm.get('editor').errors.required">
+            Completa el detalle de la oferta 
+
+          </strong>
+
+
+        </span>
+
         </div>
       </div>
-
-      <span class="text-danger " *ngIf="publicarForm.get('editor').touched ">
-        <strong>Debes de completar la descripcion de la oferta!!
-        </strong>
-      </span>
+      <div class="d-flex ml-3 ">
+          <div  class="form-group">
+          
+              <button id=''   style="color:#fff; background-color: #ff0505;" mat-raised-button
+                >Atras</button>
+    
+    
+          </div>
+          <div class="form-group" >
+            
+              <button id=""   type="submit" style=" margin-left: 5px; color:#fff; background-color: #ff0505;" 
+              mat-button >Confirmar</button>
+            
+          </div>
+      </div>
     </form>
   </header>
 </div>
