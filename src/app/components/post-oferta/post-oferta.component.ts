@@ -11,6 +11,27 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class PostOfertaComponent implements OnInit {
   content: string;
   public Editor = ClassicEditor;
+  
+  valor='';
+  //FUNCION DE EJEMPLO NADA MAS
+  //heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
+  //myHero = this.heroes[0];
+  
+  
+  onKey(event:KeyboardEvent){
+    //  this.valor+=(event.target as HTMLInputElement).value + ' /';
+  //console.log(typeof this.valor);
+  //console.error(this.myHero)
+
+  }
+
+  
+
+  
+  public model = {
+    editorData: '<h5>PUEDES BORRAR ESTE TEXTO Y EMPEZAR A ESCRIBIR ! </h5>   ' +
+      '<h4>Descipcion de tu oferta </h4> <br><br><br><br><br><br> <h4> Requisitos </h4> '
+  };
 
   publicarForm: FormGroup
   constructor(
@@ -18,8 +39,11 @@ export class PostOfertaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    
-      this.publicarForm = this.builder.group({
+    const editorData = '<p>Hello, world!</p>';
+
+
+    //
+    this.publicarForm = this.builder.group({
       titulo_oferta: ['', [Validators.required, Validators.minLength(6)]],
       cargo_solicitado: ['', [Validators.required, Validators.minLength(6)]],
       puestos_vacantes: ['', [Validators.required]],
@@ -30,11 +54,13 @@ export class PostOfertaComponent implements OnInit {
       vehiculo: ['', [Validators.required]],
       pais: ['', [Validators.required]],
       departamento: ['', [Validators.required]],
-      expiracion : ['', [Validators.required]],
+      expiracion: ['', [Validators.required]],
       editor: ['', [Validators.required]]
-        
+
     }
     )
   }
-
+  enviarOferta(){
+    
+  }
 }

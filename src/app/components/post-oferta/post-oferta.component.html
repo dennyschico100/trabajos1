@@ -1,9 +1,9 @@
 <div style="position: relative; top: 100px; display: block; height: 100vh;" class="container">
   <header class="jumbotron">
-
+    
     <!--<ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
         <p>{{ content }}</p>-->
-    <form class="form" method="post" [formGroup]="publicarForm">
+    <form class="form"  (ngSubmit)="enviarOferta()" method="post" [formGroup]="publicarForm">
 
       <div class="form-group " [ngClass]="{'has-error':publicarForm.get('titulo_oferta').errors &&
       (publicarForm.get('titulo_oferta').touched || publicarForm.get('titulo_oferta').dirty)}">
@@ -219,22 +219,23 @@
         </div>
 
       </div>
-      <div class="form-group"  [ngClass]="{'has-error':publicarForm.get('departamento').errors &&
-      (publicarForm.get('departamento').touched || publicarForm.get('departamento').dirty)}"  >
-        <div  class="col-sm-4 mt-3"  >
+      <div class="form-group" [ngClass]="{'has-error':publicarForm.get('departamento').errors &&
+      (publicarForm.get('departamento').touched || publicarForm.get('departamento').dirty)}">
+        <div class="col-sm-4 mt-3">
           <label for="my-select"><strong>Departamento</strong></label>
-          <select  formControlName="departamento" class="selectpicker form-control" data-width="25%">
+          <select formControlName="departamento" class="selectpicker form-control" data-width="25%">
             <option>San Salvador</option>
 
-          </select>   <span *ngIf="publicarForm.get('departamento').errors  && (publicarForm.get('departamento').touched )  "
-          class="help-block mt-5  text-danger ">
-          <strong class="mr-4" *ngIf="publicarForm.get('departamento').errors.required">
-            Selecciona un departamento !
+          </select> <span
+            *ngIf="publicarForm.get('departamento').errors  && (publicarForm.get('departamento').touched )  "
+            class="help-block mt-5  text-danger ">
+            <strong class="mr-4" *ngIf="publicarForm.get('departamento').errors.required">
+              Selecciona un departamento !
 
-          </strong>
+            </strong>
 
 
-        </span>
+          </span>
 
 
         </div>
@@ -258,43 +259,54 @@
 
 
 
-
       <!--
       (change)="onChange($event)" 
     -->
       <div class="form-group">
         <div class="col-sm-12 mt-2">
           <label for=""><strong>Detalle de la oferta</strong></label>
-          <ckeditor style="height: 400px;" formControlName='editor' [editor]="Editor">
+          <ckeditor style="height: 400px;" formControlName="editor" [editor]="Editor" [(ngModel)]="model.editorData">
 
           </ckeditor>
           <span *ngIf="publicarForm.get('editor').errors  && (publicarForm.get('editor').touched )  "
-          class="help-block mt-5  text-danger ">
-          <strong class="mr-4" *ngIf="publicarForm.get('editor').errors.required">
-            Completa el detalle de la oferta 
+            class="help-block mt-5  text-danger ">
+            <strong class="mr-4" *ngIf="publicarForm.get('editor').errors.required">
+              Completa el detalle de la oferta
 
-          </strong>
+            </strong>
 
 
-        </span>
+          </span>
 
         </div>
       </div>
       <div class="d-flex ml-3 ">
-          <div  class="form-group">
-          
-              <button id=''   style="color:#fff; background-color: #ff0505;" mat-raised-button
-                >Atras</button>
-    
-    
-          </div>
-          <div class="form-group" >
-            
-              <button id=""   type="submit" style=" margin-left: 5px; color:#fff; background-color: #ff0505;" 
-              mat-button >Confirmar</button>
-            
-          </div>
+        <div class="form-group">
+
+          <button id='' style="color:#fff; background-color: #ff0505;" mat-raised-button>Atras</button>
+          <p> {{valor}}</p>
+          <ul>
+            <li *ngFor="let hero of heroes">
+              {{ hero }}
+            </li>
+            <li>   <h2>{{myHero}}</h2>            </li>
+          </ul>
+
+
+        </div>
+        <div class="form-group">
+
+          <button  onsubmit="" id="" type="submit" style=" margin-left: 5px; color:#fff; background-color: #ff0505;"
+            mat-button>Confirmar</button>
+          <!--
+
+              <div [className]="'active'"></div>
+
+            -->
+        </div>
       </div>
     </form>
+
+  
   </header>
 </div>

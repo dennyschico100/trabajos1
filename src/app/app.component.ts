@@ -6,7 +6,7 @@ import { TokenStorageService } from './Servicios/token-storage.service'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
+  
   private roles: string[];
   isLoggedIn = false;
   showAdminBoard = false;
@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
       //nave.classList.add('mobile_nav')
       
 
-
+      
       /*let nav= document.getElementById('menu')
       let classesToAdd = [ 'mt-0', 'navbar' ];
       
