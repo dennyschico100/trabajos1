@@ -10,51 +10,7 @@
     z-index: 100;
   }
 
-  @media (min-width:768px) and (max-width:1023px ){
-    
-    .col-sm-12  {
-      display: flex;
-      flex-wrap: wrap;
-      
-      justify-content: center;
-}
-
-.col-sm-12 > div:first-child{
-  position: relative;
-  left: -9%;
-  border: px solid salmon;
-}
-
-
-.col-sm-12 > div:last-child{
-  position: relative;
-  right: -10%;
-  border: 0px solid salmon;
-}
-
-  } 
   @media (min-width:1024px){
-
-    .col-sm-12  {
-          display: flex;
-          flex-wrap: wrap;
-          
-          justify-content: center;
-    }
-
-    .col-sm-12 > div:first-child{
-      position: relative;
-      left: -9%;
-      border: px solid salmon;
-    }
-
-
-    .col-sm-12 > div:last-child{
-      position: relative;
-      right: -10%;
-      border: px solid salmon;
-    }
-
     .lds-spinner {
       color: official;
       display: inline-block;
@@ -179,8 +135,8 @@ h1{
 }
 .container-fluid{
 
-  /* 
-    background-color:#ff5454 ; #ffa2a2 background-color: #ffb6b6; REDUCCIONDLE BASE #ff5454 */
+    background-color:#ff5454 ;
+  /*  #ffa2a2 background-color: #ffb6b6; REDUCCIONDLE BASE #ff5454 */
   
     
   

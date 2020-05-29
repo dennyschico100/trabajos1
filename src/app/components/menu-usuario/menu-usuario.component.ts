@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from '../../Servicios/user.service'
+import {TokenStorageService} from '../../Servicios/token-storage.service';
+
+
 
 @Component({
   selector: 'app-menu-usuario',
@@ -7,9 +11,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuUsuarioComponent implements OnInit {
 
-  constructor() { }
+  me:string;
+  constructor(
+    private m:UserService,
+    private tokenServicio:TokenStorageService
+    ) { }
 
   ngOnInit() {
+    this.m.getUserBoard().subscribe(
+      data=>{
+        alert(data)
+      },err=>{
+        alert(err)
+        
+      }
+    )
+
+    //ESTO IMPRIME TODA LA RESPUSTA CUANDO SE LOGEA
+      console.error(this.tokenServicio.getUser());
+      
   }
 
 }

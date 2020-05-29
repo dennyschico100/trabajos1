@@ -1,125 +1,142 @@
-
-
-
-<div class="container-fluid ">
-  <div class="row">
+<div class="container-fluid  mt-5">
+  <div class="form row">
     <div style="border: 0px solid yellow;margin-bottom: 150px; "
       class=" mt-5  col-sm-11 col-12  col-lg-6  col-md-8  col-xs-12  ml-auto mr-auto">
-      <h1 class="ml-5" >Registrate</h1>
-      <mat-vertical-stepper  linear  class="shadow-lg p-3 mb-5 bg-white rounded" id="boxes">
+      <h1 class="ml-5  " style="color: black;">Registrate</h1>
+      <mat-vertical-stepper class="shadow-lg p-3 mb-5 bg-white rounded" id="boxes">
 
-        <mat-step  id="step1" completed=false class="box" [stepControl]="registrarForm1">
+        <mat-step id="step1" completed=false class="box" [stepControl]="registrarForm1">
           <form method="post" [formGroup]="registrarForm1">
             <ng-template matStepLabel>
               <h3>Informacion General</h3>
             </ng-template>
-            <mat-form-field class="form">
-              <mat-label>Nombres</mat-label>
+            <div class="col-sm-12   " style=" border: px solid blue;">
+              <div class="col-sm-5 col-md-5 "   >
+                <mat-form-field class="form">
+                  <mat-label>Nombres</mat-label>
 
-              <div class="form-group was-validated " [ngClass]="{'has-error':registrarForm1.get('nombres').errors &&
-                   (registrarForm1.get('nombres').touched || registrarForm1.get('nombres').dirty)}">
-                <p class="text-muted"></p>
+                  <div class="form-group was-validated " [ngClass]="{'has-error':registrarForm1.get('nombres').errors &&
+                     (registrarForm1.get('nombres').touched || registrarForm1.get('nombres').dirty)}">
+                    <p class="text-muted"></p>
 
-                <input matInput formControlName="nombres" type="text" id="signupusername" class="form-control"
-                  placeholder="*Nombres" required>
-                <!--<div class="text-danger"><em>This will be your login name!</em></div>-->
-                <span *ngIf="registrarForm1.get('nombres').errors  && (registrarForm1.get('nombres').touched )  "
-                  class="help-block text-danger ">
+                    <input matInput formControlName="nombres" type="text" id="signupusername" class="form-control"
+                      placeholder="*Nombres" required>
+                    <!--<div class="text-danger"><em>This will be your login name!</em></div>-->
+                    <span *ngIf="registrarForm1.get('nombres').errors  && (registrarForm1.get('nombres').touched )  "
+                      class="help-block text-danger ">
 
-                  <span *ngIf="registrarForm1.get('nombres').errors.required ">
-                    Ingrese tus nombres!
+                      <span class="mr-4" *ngIf="registrarForm1.get('nombres').errors.required ">
+                        Ingrese tus nombres!
 
-                  </span>
-                </span>
+                      </span>
+                    </span>
 
-              </div>
-
-
-
-
-
-            </mat-form-field>
-            <mat-form-field class="form">
-                <mat-label>Apellidos</mat-label>
-                    
-              <div class="form-group was-validated" [ngClass]="{'has-error':registrarForm1.get('apellidos').errors &&
-                    (registrarForm1.get('apellidos').touched || registrarForm1.get('apellidos').dirty)}">
-                    
-
-                    <input matInput formControlName="apellidos" type="text" id="signupusername" class="form-control"
-                  placeholder="" required>
-                <!--<div class="text-danger"><em>This will be your login name!</em></div>-->
-                <mat-error
-                  *ngIf="registrarForm1.get('apellidos').errors  && (registrarForm1.get('apellidos').touched )  "
-                  class="help-block text-danger ">
-
-                  <mat-error *ngIf="registrarForm1.get('apellidos').errors.required   ">
-                    Ingrese tus Apellidos!
-
-                  </mat-error>
-                </mat-error>
-
-              </div>
-
-            </mat-form-field>
-            <div class="form-group ">
-
-
-              <mat-form-field class="form">
-                  <mat-label>Pais</mat-label>
-
-                <mat-select placeholder="Pais" formControlName="nacionalidad">
-
-                  <mat-option value="El Salvador">El Salvador</mat-option>
-                  <mat-option value="Guatemala">Guatemala</mat-option>
-                  <mat-option value="Honduras">Honduras</mat-option>
-
-                </mat-select>
-              </mat-form-field>
-
-
-              <!--<div class="text-danger"><em>This will be your login name!</em></div>-->
-
-            </div>
-
-            <mat-form-field class="form">
-              <mat-label>Edad</mat-label>
-                <div class="form-group">
-                    <input matInput formControlName="edad" min="1" max="80" type="number" name="edad" id="signupphone"
-                      class="form-control" placeholder="*">
                   </div>
 
 
-            </mat-form-field>
-            <div class="form-group">
 
 
-              <mat-form-field class="form">
+
+                </mat-form-field>
+
+              </div>
+              <div class="col-sm-5">
+                <mat-form-field class="form">
+                  <mat-label>Apellidos</mat-label>
+
+                  <div class="form-group was-validated" [ngClass]="{'has-error':registrarForm1.get('apellidos').errors &&
+                      (registrarForm1.get('apellidos').touched || registrarForm1.get('apellidos').dirty)}">
+
+
+                    <input matInput formControlName="apellidos" type="text" id="signupusername" class="form-control"
+                      placeholder="" required>
+                    <!--<div class="text-danger"><em>This will be your login name!</em></div>-->
+                    <mat-error
+                      *ngIf="registrarForm1.get('apellidos').errors  && (registrarForm1.get('apellidos').touched )  "
+                      class="help-block text-danger ">
+
+                      <mat-error class="mr-4" *ngIf="registrarForm1.get('apellidos').errors.required   ">
+                        Ingrese tus Apellidos!
+
+                      </mat-error>
+                    </mat-error>
+
+                  </div>
+
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="col-sm-12">
+
+              <div class="col-sm-5  col-md-5" >
+
+
+                <mat-form-field class="form">
+                  <mat-label>Pais</mat-label>
+
+                  <mat-select placeholder="Pais" formControlName="nacionalidad">
+
+                    <mat-option value="El Salvador">El Salvador</mat-option>
+                    <mat-option value="Guatemala">Guatemala</mat-option>
+                    <mat-option value="Honduras">Honduras</mat-option>
+
+                  </mat-select>
+                </mat-form-field>
+
+
+                <!--<div class="text-danger"><em>This will be your login name!</em></div>-->
+
+              </div>
+              <div class="col-sm-5">
+
+
+                <mat-form-field class="form">
                   <mat-label>Genero</mat-label>
-                    
-                <mat-select required  matInput placeholder="Genero" formControlName="genero">
 
-                  <mat-option value="1">Masculino</mat-option>
-                  <mat-option value="2">Femenino</mat-option>
+                  <mat-select required matInput placeholder="Genero" formControlName="genero">
 
-                </mat-select>
+                    <mat-option value="1">Masculino</mat-option>
+                    <mat-option value="2">Femenino</mat-option>
+
+                  </mat-select>
+                </mat-form-field>
+
+
+                <!--<div class="text-danger"><em>This will be your login name!</em></div>-->
+
+              </div>
+            
+            </div>
+            <div class="col-sm-12">
+          
+            <div class="col-sm-5">
+              <mat-form-field class="form">
+                <mat-label>Telefono </mat-label>
+
+                <div class="form-group">
+                  <input required matInput formControlName="telefono" type="number" name="telefono" id="signupphone"
+                    class="form-control" placeholder="(503)-(0000000)">
+                </div>
               </mat-form-field>
 
-
-              <!--<div class="text-danger"><em>This will be your login name!</em></div>-->
-
             </div>
-            <mat-form-field class="form" >
-                <mat-label>Telefono </mat-label>
-                    
-                <div class="form-group">
-                        <input required  matInput formControlName="telefono" type="number" name="telefono" id="signupphone" class="form-control"
-                          placeholder="(503)-(0000000)">
-                      </div>
-        </mat-form-field>
-       
+               <div class="col-sm-5">
+                <mat-form-field class="form">
+                  <mat-label>Edad</mat-label>
+                  <div class="form-group">
+                    <input matInput formControlName="edad" min="1" max="80" type="number" name="edad" id="signupphone"
+                      class="form-control" placeholder="*">
+                  </div>
+  
+  
+                </mat-form-field>
+               </div>
+            </div>
+
             <div>
-              <button   [disabled]="registrarForm1.invalid" id="Continuar" (click)="hand()"  mat-raised-button  matStepperNext>Continuar</button>
+              <button [disabled]="registrarForm1.invalid" id="Continuar" (click)="hand()" mat-raised-button
+                matStepperNext>  Continuar  </button>
 
             </div>
 
@@ -127,9 +144,11 @@
         </mat-step>
 
 
-        <mat-step   completed=false  class="box" [stepControl]="registrarForm2" id="">
-          <form  (ngSubmit)="onSubmit()"  method="post" [formGroup]="registrarForm2">
-            <ng-template matStepLabel><h3>Datos de cuenta</h3></ng-template>
+        <mat-step completed=false class="box" [stepControl]="registrarForm2" id="">
+          <form (ngSubmit)="onSubmit()" method="post" [formGroup]="registrarForm2">
+            <ng-template matStepLabel>
+              <h3>Datos de cuenta</h3>
+            </ng-template>
             <mat-form-field class="form">
               <mat-label>Correo Electronico</mat-label>
 
@@ -144,7 +163,7 @@
 
                   Ingresa tu correo electronico
                 </mat-error>
-                <mat-error *ngIf="registrarForm2.get('email').errors?.email ">
+                <mat-error class="mr-4" *ngIf="registrarForm2.get('email').errors?.email   ">
                   Ingrese un email valido Ej:@gmail.com !
 
                 </mat-error>
@@ -154,19 +173,18 @@
               <mat-label>Contraseña</mat-label>
               <div class="form-group  was-validated" [ngClass]="{'has-error':registrarForm2.get('contraseña').invalid &&
                   (registrarForm2.get('contraseña').touched || registrarForm2.get('contraseña').dirty)}">
-               
-                  <input matInput name="contraseña" formControlName="contraseña" type="password" id="signuppassword"
+                <input matInput name="contraseña" formControlName="contraseña" type="password" id="signuppassword"
                   class="form-control" placeholder="*Contraseña" required>
                 <mat-error
                   *ngIf="registrarForm2.get('contraseña').errors?.required  && (registrarForm2.get('contraseña').dirty ||  registrarForm2.get('contraseña').touched )   "
-                  class="">
+                  class=" mr-4">
                   Ingresa tu Contraseña
 
                 </mat-error>
-  <mat-error class="r" *ngIf="registrarForm2.get('contraseña').errors?.minlength ">
-    Debe tener almenos 6 caracteres!
+                <mat-error class="mt-4" *ngIf="registrarForm2.get('contraseña').errors?.minlength ">
+                  Debe tener almenos 6 caracteres!
 
-  </mat-error>
+                </mat-error>
 
 
               </div>
@@ -185,36 +203,61 @@
                       ||  registrarForm2.get('contraseña2').touched )   " class="text-danger ">
                   Repite tu Contraseña
                 </span>
-                <mat-error class="" *ngIf="registrarForm2.get('contraseña2').errors?.minlength ">
+                <mat-error class="mt-4" *ngIf="registrarForm2.get('contraseña2').errors?.minlength ">
                   Debe tener almenos 6 caracteres!
 
                 </mat-error>
 
-                <div class="text-danger text-uppercase" *ngIf="registrarForm2.get('contraseña2').errors?.mustMatch">
+                <div class=" mt-4 text-danger text-uppercase"
+                  *ngIf="registrarForm2.get('contraseña2').errors?.mustMatch">
                   Contraseñas no coinciden ! </div>
 
 
               </div>
 
             </mat-form-field>
-
-            <div class="izq   d "  >
-             <div class=" " >
-                <button style="color:#fff; background-color: #ff0505;"  mat-raised-button    matStepperPrevious>Atras</button>
-             
-             </div> 
-             <div class="" >
-                <button type="submit" style="color:#fff; background-color: #ff0505;"   [disabled]="registrarForm2.invalid" mat-button matStepperNext>Confirmar</button>
-
-             </div>
-            </div>
-            
-              <div class="alert alert-success" *ngIf="isSuccessful">
-                Your registration is successful!
+            <div *ngIf="sent">
+              <div class="lds-spinner" id="spin">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
               </div>
-              <div class="alert alert-warning" *ngIf="isSignUpFailed">
-                  Signup failed!<br />{{ errorMessage }}
-                </div>
+            </div>
+            <div class="izq   d ">
+              <div class=" ">
+                <button id='atras' [disabled]='habilitar' style="color:#fff; background-color: #ff0505;"
+                  mat-raised-button matStepperPrevious>Atras</button>
+
+              </div>
+              <div class="">
+                <button id="confirmar" [disabled]='habilitar' type="submit"
+                  style="color:#fff; background-color: #ff0505;" [disabled]="registrarForm2.invalid" mat-button
+                  matStepperNext>  Confirmar </button>
+
+              </div>
+            </div>
+            <div class="">
+              <div
+                style=" text-align: center; justify-content: center;height: 50px;  margin-top: 17px; margin-bottom: 30px;"
+                class="alert alert-success" *ngIf="isSuccessful">
+                <strong> Registrado Exitosamente !
+                </strong>
+              </div>
+              <div style=" padding: 5px;  height: 50px;  margin-top: 17px;margin-bottom: 30px"
+                class="alert alert-danger" *ngIf="isSignUpFailed">
+                Ocurrio un error al registrarse!
+                <br />{{ errorMessage }}
+              </div>
+            </div>
           </form>
 
 
@@ -223,8 +266,9 @@
         </mat-step>
 
       </mat-vertical-stepper>
-      
 
+      <style>
+      </style>
 
 
       <!--<mat-step>

@@ -6,11 +6,12 @@ import { TokenStorageService } from './Servicios/token-storage.service'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
+  
   private roles: string[];
   isLoggedIn = false;
   showAdminBoard = false;
   showModeratorBoard = false;
+  showUserBoard=false;
   username: string;
   title = 'trabajos-cliente';
 
@@ -27,17 +28,32 @@ export class AppComponent implements OnInit {
 
 
     this.innerWidth = window.innerWidth;
-    if(this.innerWidth < 728){
-      let nav= document.getElementById('menu')
+    if(this.innerWidth < 1024){
+
+   
+      let ul =document.getElementById( 'list-1')
+      //ul.classList.add('navbar-nav')
+
+
+      //let nave = document.getElementById('nave');
+      
+      //nave.classList.remove('d-lg-block');
+      //nave.classList.remove('nav-menu');
+      
+      //nave.classList.add('mobile_nav')
+      
+
+      
+      /*let nav= document.getElementById('menu')
       let classesToAdd = [ 'mt-0', 'navbar' ];
       
-    nav.classList.add('navbar');
+       nav.classList.add('navbar');
           
       //nav.classList.add('navbar');
       
         
       let ul =document.querySelector('.list-1')
-      ul.classList.add('navbar-nav')
+      ul.classList.add('navbar-nav')*/
       
 
 
@@ -53,17 +69,14 @@ export class AppComponent implements OnInit {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showUserBoard=this.roles.includes('ROLE_USER')
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR')
       this.username = user.email;
-
-
+      console.error(this.tokenStorageService.getToken())
 
     }
   }
 
 
-  logout() {
-    this.tokenStorageService.signOut();
-    window.location.reload();
-  }
+ 
 }
