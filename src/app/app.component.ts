@@ -78,8 +78,5 @@ export class AppComponent implements OnInit {
   }
 
 
-  logout() {
-    this.tokenStorageService.signOut();
-    window.location.reload();
-  }
+ 
 }

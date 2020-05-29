@@ -11,11 +11,16 @@ import { MenuAdminComponent } from './components/menu-admin/menu-admin.component
 import { MenuNoderadorComponent } from './components/menu-noderador/menu-noderador.component';
 import { MenuUsuarioComponent } from './components/menu-usuario/menu-usuario.component';
 
+import { NavegacionComponent} from './components/navegacion/navegacion.component';
+import { RegistroOpcionesComponent } from './components/registro-opciones/registro-opciones.component';
+import { RegistroEmpresaComponent } from './components/registro-empresa/registro-empresa.component';
+import { PostOfertaComponent } from './components/post-oferta/post-oferta.component';
+import { RegistroCandidatosComponent } from './components/registro-candidatos/registro-candidatos.component'
+
 import {FormsModule } from '@angular/forms'
 import {HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
-
 import {ReactiveFormsModule } from '@angular/forms';
-import { RegistroCandidatosComponent } from './components/registro-candidatos/registro-candidatos.component'
+
 //MODEUL DE ANGULAR MTERIAL
 import { MatSliderModule } from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input'
@@ -23,23 +28,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule } from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
 
-import { AuthInterceptor } from '../app/_helpers/AuthInterceptor';
-
 
 import { MatButtonModule } from '@angular/material/button';
-import {MatNativeDateModule,MatDatepickerModule } from '@angular/material';
 
+import {MatNativeDateModule,  MatDatepickerModule } from '@angular/material';
 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatStepper,MatStepLabel,MatStepperModule,MatHorizontalStepper} from '@angular/material/stepper';
 import { MatSelectModule } from '@angular/material/select';
-import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import { NavegacionComponent} from './components/navegacion/navegacion.component';
-import { RegistroOpcionesComponent } from './components/registro-opciones/registro-opciones.component';
-import { RegistroEmpresaComponent } from './components/registro-empresa/registro-empresa.component';
-import { PostOfertaComponent } from './components/post-oferta/post-oferta.component';
+//import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
+import { AuthInterceptor } from '../app/_helpers/AuthInterceptor';
 
 //import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -85,12 +86,14 @@ import { PostOfertaComponent } from './components/post-oferta/post-oferta.compon
     CKEditorModule,
     MatDatepickerModule,
     MatNativeDateModule,
-  
-    FroalaEditorModule.forRoot(),
-     FroalaViewModule.forRoot(),
-     MatTabsModule,
+   MatTabsModule,
  
   ],
+  /*
+  FroalaEditorModule.forRoot(),
+  FroalaViewModule.forRoot(),
+  
+ */
   providers: [ {
      provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,

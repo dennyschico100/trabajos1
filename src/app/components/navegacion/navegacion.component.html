@@ -100,6 +100,25 @@
 
                             </ul>
                         </li>
+
+                        <ul *ngIf="isLoggedIn"  >
+                                <li id="abajo" class="nav-item dropdown drop-down"><a class="nav-link " id="navbarDropdown"
+                                    role="button" data-toggle="dropdown" aria-haspopup="true"
+                                    aria-expanded="false">Mi Cuenta</a>
+                                <ul style="border:0px solid #fff;" class="dropdown-menu">
+                                    
+                                        <li class="nav-item">
+                                                <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
+                                            </li>
+                                            <li class="nav-item"><a class="nav-link" href="#">Nueva oferta</a></li>
+                                            <li class="nav-item">
+                                                <a href class="nav-link" (click)="logout()">LogOut</a>
+                                            </li>
+    
+                                </ul>
+                            </li>
+
+                        </ul>
                         <!--
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -123,7 +142,7 @@
                 <a  routerLink="registro-opciones" style="background-color: #fb246a;color: #fff;" href="#" class="btn head-btn1">Register</a>
                 <a routerLink="login"   style="margin: 7px; padding: 6px;" class="btn head-btn2">Iniciar Sesion</a>
             </div>
-            <ul class="drop-menu ml-auto children-list2 " *ngIf="isLoggedIn">
+            <ul style="display: none;" class="drop-menu ml-auto children-list2 " *ngIf="isLoggedIn" >
                 <li class="nav-item">
                     <a href="/profile" class="nav-link" routerLink="profile">{{ username }}</a>
                 </li>

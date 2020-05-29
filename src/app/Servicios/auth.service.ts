@@ -43,9 +43,6 @@ export class AuthService   {
       contraseña: registrarForm2.contraseña,
       contraseña2: registrarForm2.contraseña2 ,
       nacionalidad:registrarForm1.nacionalidad,
-      genero: registrarForm1.genero,
-      edad: registrarForm1.edad,
-      fecha_nacimiento:registrarForm1.fecha_nacimiento,
       telefono: registrarForm1.telefono,
       estado: registrarForm1.estado,
       roles:registrarForm1.roles

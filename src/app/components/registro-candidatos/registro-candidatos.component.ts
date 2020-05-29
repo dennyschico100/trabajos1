@@ -85,12 +85,9 @@ export class RegistroCandidatosComponent implements OnInit {
     //alert("entramos")
     if (this.registrarForm1.invalid) {
       //alert("EST EN EL IF")
-
       this.proceder = true;
       //let p1=document.getElementsByTagName("mat-step")[0];
-
       //p1.setAttribute("completed","true");
-
 
     } else {
 
@@ -156,9 +153,9 @@ export class RegistroCandidatosComponent implements OnInit {
     this.validar()
     //,
     this.registrarForm2 = this.formBuilder2.group({
-      email: ['', [Validators.required, Validators.email]],
+      email: ['jose@gmail.com', [Validators.required, Validators.email]],
       contraseña: ['', [Validators.required, Validators.minLength(6)]],
-      contraseña2: ['', [Validators.required, Validators.minLength(6)]],
+      contraseña2: ['', [ Validators.required, Validators.minLength(6)]],
       
     }, {
       validator: this.MustMatch('contraseña', 'contraseña2')

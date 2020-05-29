@@ -7,6 +7,8 @@
   
   body, html {
       height: 100%;
+      background-color: rgb(230, 232, 240);
+    
       
   }
   
@@ -154,7 +156,8 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color:#d4c2c2dc;
+    background-color: rgb(230, 232, 240);
+    
      
   }
   
