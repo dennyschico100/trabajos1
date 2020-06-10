@@ -74,11 +74,15 @@ export class LoginComponent implements OnInit {
 
   }
   onSubmit() {
-
+    let  boton =document.getElementById('boton-enviar');
+    
     setTimeout(() => {
       this.cargando.style.display = "none";
-    }, 1500);
+      
+      boton.style.opacity="1.0";
 
+    }, 1500);
+    boton.style.opacity="0.3";
 
     this.ventana1 = document.getElementById('popup1')
     this.ventana1.className = 'overlay2'
@@ -127,7 +131,8 @@ export class LoginComponent implements OnInit {
 
       },
       err => {
-        alert('else err')
+        //alert('else err')
+
           
         this.ventana1 = document.getElementById('popup1')
         this.ventana1.style.display = "none"
