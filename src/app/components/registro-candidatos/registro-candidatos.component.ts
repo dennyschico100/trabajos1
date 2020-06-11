@@ -214,10 +214,12 @@ export class RegistroCandidatosComponent implements OnInit {
 
     if (!this.registrarForm2.errors) {
       this.spinner = document.getElementById('spin')
-
+      
       setTimeout(() => {
-        this.spinner.style.opacity = "0"
-        this.spinner.remove
+        //this.spinner.style.opacity = "0"
+
+        //this.spinner.remove
+
         atras.setAttribute('disabled', 'false')
 
       }, 1480);
@@ -227,8 +229,10 @@ export class RegistroCandidatosComponent implements OnInit {
       this.spinner = document.getElementById('spin')
 
       setTimeout(() => {
-        this.spinner.style.opacity = "0"
-        this.spinner.remove
+        //this.spinner.style.opacity = "0"
+
+        //this.spinner.remove
+
       }, 1480);
 
 

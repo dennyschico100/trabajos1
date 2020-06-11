@@ -1,9 +1,9 @@
 <div style="position: relative; top: 100px; display: block; height: 100vh;" class="container">
   <header class="jumbotron">
-    
+
     <!--<ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>
         <p>{{ content }}</p>-->
-    <form class="form"  (ngSubmit)="enviarOferta()" method="post" [formGroup]="publicarForm">
+    <form class="form" (ngSubmit)="enviarOferta()" method="post" [formGroup]="publicarForm">
 
       <div class="form-group " [ngClass]="{'has-error':publicarForm.get('titulo_oferta').errors &&
       (publicarForm.get('titulo_oferta').touched || publicarForm.get('titulo_oferta').dirty)}">
@@ -84,12 +84,12 @@
 
           <label for="my-select"><strong>Tipo de Contatacion</strong></label>
           <select formControlName="tipo_de_contratacion" class="selectpicker form-control" data-width="25%">
-            <option>Plaza Fija</option>
+            <option value="plaza fija"  >Plaza Fija</option>
 
-            <option>Por Proyecto</option>
+            <option value="por Proyecto"  >Por Proyecto</option>
 
-            <option>Eventual</option>
-            <option>Pasantia</option>
+            <option value="Eventual "  >Eventual</option>
+            <option value="Pasantia"  >Pasantia</option>
           </select>
           <span
             *ngIf="publicarForm.get('tipo_de_contratacion').errors  && (publicarForm.get('tipo_de_contratacion').touched )  "
@@ -110,11 +110,11 @@
         <div class="col-sm-4 mt-3">
           <label for="my-select"><strong>Nivel de experiencia</strong></label>
           <select formControlName="nivel_de_experiencia" class="selectpicker form-control" data-width="25%">
-            <option>Sin experiencia previa</option>
-            <option>Menos de un año </option>
-            <option> 1 -3 años</option>
-            <option>3 - 5 años</option>
-            <option>Mas de 5 años</option>
+            <option value="sin ezperiencia " >Sin experiencia previa</option>
+            <option value="menos de un año" >Menos de un año </option>
+            <option  value="1-3 años" > 1 -3 años</option>
+            <option  value="3-5 años " >3 - 5 años</option>
+            <option  value="mas de 5 años "  >Mas de 5 años</option>
 
           </select>
           <span
@@ -136,9 +136,9 @@
         <div class="col-sm-4 mt-3">
           <label for="my-select"><strong>Genero</strong></label>
           <select formControlName="genero" class="selectpicker form-control" data-width="25%">
-            <option>Indiferente</option>
-            <option>Masculino</option>
-            <option>Femenino</option>
+            <option value="1" >Indiferente</option>
+            <option value="2" >Masculino</option>
+            <option  value="3" >Femenino</option>
 
 
           </select>
@@ -178,8 +178,8 @@
         <div class="form-group">
           <label for="my-select"><strong>Vehiculo</strong></label>
           <select formControlName="vehiculo" class="selectpicker form-control" data-width="25%">
-            <option>SI</option>
-            <option>NO</option>
+            <option value="si" >SI</option>
+            <option  value="no" >NO</option>
 
 
           </select>
@@ -201,7 +201,7 @@
         <div class="col-sm-4 mt-3">
           <label for="my-select"><strong>Pais</strong></label>
           <select formControlName="pais" class="selectpicker form-control" data-width="25%">
-            <option>El Salvador</option>
+            <option value="el salvador" >El Salvador</option>
 
 
           </select>
@@ -224,7 +224,7 @@
         <div class="col-sm-4 mt-3">
           <label for="my-select"><strong>Departamento</strong></label>
           <select formControlName="departamento" class="selectpicker form-control" data-width="25%">
-            <option>San Salvador</option>
+            <option value="san salvador" >San Salvador</option>
 
           </select> <span
             *ngIf="publicarForm.get('departamento').errors  && (publicarForm.get('departamento').touched )  "
@@ -251,6 +251,16 @@
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
+          <span
+            *ngIf="publicarForm.get('expiracion').errors  && (publicarForm.get('expiracion').touched )  "
+            class="help-block mt-5  text-danger ">
+            <strong class="mr-4" *ngIf="publicarForm.get('expiracion').errors.required">
+              Selecciona la fecha de expiracion de la oferta!
+
+            </strong>
+
+
+          </span>
 
         </div>
 
@@ -280,24 +290,43 @@
 
         </div>
       </div>
+      <div *ngIf="sent">
+        <div class="lds-spinner" id="spin">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
       <div class="d-flex ml-3 ">
+
         <div class="form-group">
 
-          <button id='' style="color:#fff; background-color: #ff0505;" mat-raised-button>Atras</button>
+          <button id='' style="display: none; color:#fff; background-color: #ff0505;" mat-raised-button>Atras</button>
           <p> {{valor}}</p>
           <ul>
             <li *ngFor="let hero of heroes">
               {{ hero }}
             </li>
-            <li>   <h2>{{myHero}}</h2>            </li>
+            <li>
+              <h2>{{myHero}}</h2>
+            </li>
           </ul>
 
 
         </div>
         <div class="form-group">
 
-          <button  onsubmit="" id="" type="submit" style=" margin-left: 5px; color:#fff; background-color: #ff0505;"
-            mat-button>Confirmar</button>
+          <button  id="" type="submit" style="position: relative; left: -50px; margin-left: 5px; color:#fff; background-color: #ff0505;"
+            mat-button   >Confirmar</button>
           <!--
 
               <div [className]="'active'"></div>
@@ -305,8 +334,32 @@
             -->
         </div>
       </div>
+      <div
+        style=" position: relative; top: 20px; text-align: left;left: 13px;  height: 50px;  margin-top: 17px; margin-bottom: 30px;"
+        class="alert alert-success col-sm-4 col-md-5 " *ngIf="isSuccessful">
+        <strong> Oferta publicada corectamente !
+        </strong>
+      </div>
+      
+     
     </form>
+    
+    <div id="msgError">
+        <div 
+        style="padding: 5px; position: relative; top: -50px; left: 13px;; height: 50px;  margin-top: 17px;margin-bottom: 30px"
+        class="alert col-sm-4 col-md-5 alert-danger" *ngIf="ofertFailed"  >
+        <strong>Ocurrio un error al publicar la oferta !
+          
+        </strong>
+        
+        {{ errorMessage }}
 
-  
+        <button id="cerrar" (click)="close()" class="close">&times;</button>
+        
+
+      </div>
+    </div>
+
+
   </header>
 </div>

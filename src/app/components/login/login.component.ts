@@ -132,12 +132,13 @@ export class LoginComponent implements OnInit {
       },
       err => {
         //alert('else err')
-
+        
           
         this.ventana1 = document.getElementById('popup1')
         this.ventana1.style.display = "none"
         this.isLoginFailed = true;
         this.errorMessage = err.error.message;
+        
 
       }
     );
