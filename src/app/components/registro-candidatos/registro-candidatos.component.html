@@ -154,9 +154,9 @@
 
               <div class="form-group  was-validated" [ngClass]="{'has-error':registrarForm2.get('email').invalid &&
                   (registrarForm2.get('email').touched || registrarForm2.get('email').dirty)}">
-                <input matInput formControlName="email" [email]="registrarForm2.get('email')!=''" type="email"
+                <input matInput formControlName="email"  type="email"
                   id="signupemail" class="form-control" placeholder="ej: @gmail.com" required>
-
+                <!--[email]="registrarForm2.get('email')!=''"-->
                 <mat-error
                   *ngIf="registrarForm2.get('email').errors?.required  && registrarForm2.get('email').touched  "
                   class="help-block text-danger ">
@@ -199,10 +199,11 @@
                 <input matInput compare="contraseña" name="contraseña2" formControlName="contraseña2" type="password"
                   id="" class="form-control" placeholder="*Confirmar Contraseña" required>
 
-                <span *ngIf="registrarForm2.get('contraseña2').errors?.required  && (registrarForm2.get('contraseña2').compare
-                      ||  registrarForm2.get('contraseña2').touched )   " class="text-danger ">
+                <span *ngIf="registrarForm2.get('contraseña2').errors?.required  &&  registrarForm2.get('contraseña2').touched " class="text-danger ">
                   Repite tu Contraseña
                 </span>
+                <!--(registrarForm2.get('contraseña2').compare
+                      || -->
                 <mat-error class="mt-4" *ngIf="registrarForm2.get('contraseña2').errors?.minlength ">
                   Debe tener almenos 6 caracteres!
 
