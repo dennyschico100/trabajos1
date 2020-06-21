@@ -13,7 +13,7 @@ import {RegistroOpcionesComponent} from './components/registro-opciones/registro
 
 import { NavegacionComponent} from './components/navegacion/navegacion.component';
 import {PostOfertaComponent} from './components/post-oferta/post-oferta.component';
-
+import {ListarTrabajosComponent} from "./components/listar-trabajos/listar-trabajos.component"
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'nav', component: NavegacionComponent},
@@ -26,6 +26,9 @@ const routes: Routes = [
   { path: 'mod', component: MenuNoderadorComponent},
   { path: 'admin', component: MenuAdminComponent },
   { path:'post-oferta',component:PostOfertaComponent },
+  {
+    path:'listar-trabajos',component :ListarTrabajosComponent
+  },
   {
     path:'registro-opciones',
     component: RegistroOpcionesComponent },

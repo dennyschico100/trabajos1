@@ -41,6 +41,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { AuthInterceptor } from '../app/_helpers/AuthInterceptor';
+import { CategoriasComponent } from './components/categorias/categorias.component';
+import { ListarTrabajosComponent } from './components/listar-trabajos/listar-trabajos.component';
 
 //import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -60,7 +62,9 @@ import { AuthInterceptor } from '../app/_helpers/AuthInterceptor';
     NavegacionComponent,
     RegistroOpcionesComponent,
     RegistroEmpresaComponent,
-    PostOfertaComponent
+    PostOfertaComponent,
+    CategoriasComponent,
+    ListarTrabajosComponent
 
   
   ],exports: [

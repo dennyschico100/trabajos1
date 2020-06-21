@@ -1,0 +1,49 @@
+
+
+#categoria-contenedor {
+    
+    border: px  solid red;
+}
+
+#categoria-contenedor  p{
+    margin-top: 20px;
+    text-align: center;
+    border: px solid blue;
+}
+
+.icono-categoria    {
+    position: relative;
+    left: 100px;
+    color: #014b85; 
+    font-size: 50px;
+    border:px solid yellow;
+    transition: all .7s ease-in-out;
+}
+
+@media screen and (max-width:800px){
+    
+.icono-categoria    {
+    position: relative;
+    left: 45%;
+    color: #014b85; 
+    font-size: 50px;
+    border:px solid yellow;
+    transition: all .7s ease-in-out;
+}
+} 
+
+
+.icono-categoria:hover   {
+ color: #fb246a;
+ transform: scale(1.2);
+}
+p::after{
+    
+ transition: all 1.7s;
+}
+
+
+
+.fa-bars{
+    
+}

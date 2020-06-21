@@ -1,0 +1,125 @@
+body,.card{
+    background-color: rgb(230, 232, 240);
+}
+
+.selectpicker{
+    
+    border: 2px solid  #fb246a;
+    padding: 7px;
+    width: 100%;
+    justify-content: center;    
+
+}
+.selectpicker > option{
+    
+}
+.selectpicker:target{
+    
+}
+
+/*
+ESTILS PARA LAS CATEGORIAS
+
+*/
+
+@media (min-width:320px) and (max-widht:768px){
+    #img-oferta{
+        
+    }
+}
+.card-body{
+    background-color: #ffffff;
+}
+.job-category-listing{
+    
+    background-color: #ffffff;
+}
+
+.btn-oferta{
+    position: relative;
+    left: -15px;
+}
+
+@media (min-width:320px) and (max-width:768px){
+    #img-oferta img{
+        position: relative;
+        left: 33%;
+    }
+
+    .btn-oferta{
+        width: 100%;
+    }
+    .btn-filtros{
+        width: 100%;
+    }
+
+    .oferta-body p,h4{
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+    .btn-oferta{
+        position: relative;
+        left: 0px;
+    }
+    
+}
+
+.btn-filtros{
+    background-color: #fb246a;
+    border: 0px;
+    border-radius:  5px;
+    padding: 10px;
+    color: white;
+
+}
+.btn-filtros:hover{
+    background-color: #fff;
+    border: 1px solid #fb246a;
+    color:#fb246a;
+}
+.btn-oferta{
+    background-color: #fb246a;
+    border: 0px;
+    border-radius:  5px;
+    padding: 10px;
+    color: white;
+}
+.btn-oferta:hover{
+    background-color: #fff;
+    border: 1px solid #fb246a;
+    color:#fb246a;
+}
+.select-job-items2 .nice-select{
+width:100%;
+height:45px;background:#fff;
+border-radius:0px;padding:11px 19px 11px 10px;
+color:#616875;line-height:20px;border:1px solid #ededed}
+
+.select-job-items2 .nice-select{margin-bottom:20px;padding-left:25px}
+
+.job-category-listing{border:1px solid #ededed;padding:30px 19px 30px 30px}
+
+
+.slick-active button{
+    background:#ff4357;background:#ff4357;height:12px;width:12px;position:relative;top:-1px}
+    .job-category-listing .single-listing .select-Categories
+    .checkmark{
+        position:absolute;top:0;left:0;height:24px;width:24px;border:1px solid  #ddd}
+        .job-category-listing .single-listing .select-Categories .container input:checked ~ .checkmark{
+            background-color:#ff4357;border:2px solid transparent
+          }
+            .job-category-listing .single-listing .select-Categories .checkmark:after{content:"";position:absolute;display:none
+          }
+          .job-category-listing .single-listing .select-Categories .container input:checked ~ .checkmark:after{
+              display:block}  
+         
+              .job-category-listing .single-listing .select-Categories .container .checkmark::after{
+              left:8px;top:1px;width:6px;height:14px;border:solid white;border-width:0px 2px 2px 0;-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg)
+          }
+
+          
+
+          
+    
