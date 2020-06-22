@@ -7,7 +7,7 @@ import {Observable} from 'rxjs'
 //import { HttpClient } from 'selenium-webdriver/http';
 
 
-const API_URL='http://localhost:8080/trabajos/api/oferta_empleo';
+const API_URL='http://localhost:8080/trabajos/api/oferta_empleo/';
 
 const httpOption={
   headers:new HttpHeaders({ 'Content-Type': 'application/json'  })
@@ -26,7 +26,7 @@ export class OfertaEmpleoService {
 
 guardar(oferta):Observable<any>{
   return this.http.post(API_URL,{
-    titulo_oferta: oferta.titulo_oferta ,
+      titulo_oferta: oferta.titulo_oferta ,
       cargo_solicitado:oferta.cargo_solicitado ,
       puestos_vacantes:oferta.puestos_vacantes,
       tipo_de_contratacion:oferta.tipo_de_contratacion ,
@@ -41,6 +41,11 @@ guardar(oferta):Observable<any>{
       editor: oferta.editor
   
   } ,httpOption);
+
+}
+
+listarOfertas() {
+ return this.http.get(API_URL); 
 
 }
   

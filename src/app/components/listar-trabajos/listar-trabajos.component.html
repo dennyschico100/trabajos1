@@ -142,9 +142,9 @@
                   </div>
               </div> 
           </div>
-          <div class="col-md-9" style="border: px solid hotpink;">
-            <div  class="card   promoting-card">
-    
+          <div class="col-md-9"  style="border: px solid hotpink;">
+            <div   *ngFor="let oferta of ofertas"  class="card    promoting-card">
+              
               <!-- Card content -->
               <div style="border: px solid green;" class="mt-4 card-body ">
     
@@ -152,17 +152,17 @@
                <div  style="border: px solid orange ;" class="row">
                 
                   <div id="img-oferta" style="position: relative; border:px solid black;" class="col-12 col-md-2 ">
-                      <img src="../../../assets/fondos (25).jpg " class="rounded-circle" height="80px" width="80px" alt="avatar">
+                      <img src="{{oferta.logo}}" class="rounded-circle" height="80px" width="80px" alt="avatar">
                     
                   </div>
-                  <!-- Content -->
-                  <div class="oferta-body col-md-10 col-12" style="position: relative;  border:px solid blue; " >
-      
+                  <!-- Content ../../../assets/fondos (25).jpg  -->
+                  <div  class="oferta-body col-md-10 col-12"  style="position: relative;  border:px solid blue; " >
+                    
                     <!-- Title -->
-                    <h4 class="card-title font-weight-bold mb-2">Scrum Master</h4>
+                    <h4 class="card-title font-weight-bold mb-2">{{oferta.titulo_oferta}}</h4>
                     <!-- Subtitle -->
-                    <p class="card-text"><i style="border: px solid red;" class="fas fa-hourglass-start pr-2"></i>Expira : 07/24/2018</p>
-                    <p class="card-text"><i></i><strong>Contactos y oportunidades</strong></p>
+                    <p class="card-text"><i style="border: px solid red;" class="fas fa-hourglass-start pr-2"></i>Expira : {{oferta.expiracion}} </p>
+                    <p class="card-text"><i></i><strong>{{oferta.nombre_empresa}}</strong></p>
                     <div class="col-12">
                       <button class= "btn-oferta"   id="btn-veroferta"  >Ver oferta  </button>
                     </div>
@@ -178,21 +178,19 @@
                
     
               </div>
-              <div style="border: px solid green;" class="mt-4 card-body ">
+              <!--
+              <div style="border: 4px solid green;" class="mt-4 card-body ">
     
-                <!-- Avatar -->
                <div  style="border: px solid orange ;" class="row">
                 
                   <div id="img-oferta" style="position: relative; border:px solid black;" class="col-12 col-md-2 ">
                       <img src="../../../assets/fondos (21).jpg" class="rounded-circle" height="80px" width="80px" alt="avatar">
       
                   </div>
-                  <!-- Content -->
                   <div class="oferta-body col-md-10 col-12" style="position: relative;  border:px solid blue; " >
       
-                    <!-- Title -->
                     <h4 class="card-title font-weight-bold mb-2">Scrum Master</h4>
-                    <!-- Subtitle -->
+                    
                     <p class="card-text"><i style="border: px solid red;" class="fas fa-hourglass-start pr-2"></i>Expira : 07/24/2018</p>
                     <p class="card-text"><i></i><strong>Contactos y oportunidades</strong></p>
                     <div class="col-12" style="border: px solid green;" >
@@ -209,8 +207,8 @@
                </div>
                
     
-              </div>
-              
+              </div>  
+            -->
               
              
               
