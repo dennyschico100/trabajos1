@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import {OfertaEmpleoService} from '../../Servicios/oferta-empleo.service'
@@ -45,7 +46,7 @@ export class PostOfertaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const editorData = '<p>Hello, world!</p>';
+   const editorData = '<p>Hello, world!</p>';
     
     this.cerrarError=document.getElementById('msgError');
 
@@ -64,8 +65,8 @@ export class PostOfertaComponent implements OnInit {
       editor: ['', [Validators.required]]
     }
     )
-  }
 
+  }
   enviarOferta() {
     this.sent=true;
     this.ofertFailed=!false;

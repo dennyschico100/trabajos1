@@ -26,12 +26,8 @@ const routes: Routes = [
   { path: 'mod', component: MenuNoderadorComponent},
   { path: 'admin', component: MenuAdminComponent },
   { path:'post-oferta',component:PostOfertaComponent },
-  {
-    path:'listar-trabajos',component :ListarTrabajosComponent
-  },
-  {
-    path:'registro-opciones',
-    component: RegistroOpcionesComponent },
+  {path:'listar-trabajos',component :ListarTrabajosComponent},
+  { path:'registro-opciones',component: RegistroOpcionesComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 
 ];

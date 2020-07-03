@@ -52,6 +52,7 @@ import { ListarTrabajosComponent } from './components/listar-trabajos/listar-tra
   declarations: [
     AppComponent,
     LoginComponent,
+    FormsModule,
     RegistroComponent,
     HomeComponent,
     PerfilComponent,
